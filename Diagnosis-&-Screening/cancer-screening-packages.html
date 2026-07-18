@@ -219,6 +219,22 @@
           transform: scale(1);
         }
 
+        /* Align "Book This Package" CTA buttons across grid-view package cards */
+        #packagesContainer.grid .package-card {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #packagesContainer.grid .package-card > .p-6 {
+          display: flex;
+          flex-direction: column;
+          flex: 1 1 auto;
+        }
+
+        #packagesContainer.grid .package-card > .p-6 > button {
+          margin-top: auto;
+        }
+
         /* Icon Container - Base Styles */
         .icon-container {
           width: 70px;
@@ -807,308 +823,132 @@
         // Health packages data
         const healthPackages = [
           {
-            id: 'basic',
-            name: 'Basic Health Package',
+            id: 'oncology-male',
+            name: 'Oncology Screening (Male)',
+            icon: 'fa-mars',
+            color: '#014196',
+            description: 'Comprehensive cancer screening designed for men',
+            price: 1999,
+            tests: [
+              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
+              'Total PSA',
+              'Ultrasound Abdomen and Pelvis',
+              'Oral Cancer Screening',
+              'ECG',
+              'Chest X-ray (PA view)',
+              'Gastroenterologist Consultation'
+            ]
+          },
+          {
+            id: 'oncology-female',
+            name: 'Oncology Screening (Female)',
+            icon: 'fa-venus',
+            color: '#079591',
+            description: 'Cancer screening for women',
+            price: 5449,
+            tests: [
+              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
+              'Pap Smear',
+              'Ultrasound Abdomen and Pelvis',
+              'Breast Ultrasound',
+              'Oral Cancer Screening',
+              'ECG',
+              'Chest X-ray',
+              'B/L Mammogram',
+              'Gastroenterologist Consultation',
+              'Gynecologist Consultation'
+            ]
+          },
+          {
+            id: 'basic-health',
+            name: 'Basic Health Check-up',
             icon: 'fa-heartbeat',
             color: '#014196',
             description: 'Essential health screening for overall wellness',
+            price: 2999,
             tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
+              'Complete Blood Count (CBC): RBC, Hb, PCV, MCV, MCH, MCHC, RDW, TC, DC, Platelet Count',
+              'Blood Grouping and Rh Typing',
               'ESR',
               'FBS',
               'PPBS',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
-              'Urine Routine',
-              'Serum Creatinine',
-              'TSH',
-              'Stool (Occult Blood)',
-              'X-ray (Chest)',
-              'Ultrasound (Abdomen & Pelvis)',
-              'ECG',
-              '2D Echo',
-              'Physician Consultation',
-              'Dietician Consultation'
-            ]
-          },
-          {
-            id: 'bone-joint',
-            name: 'Bone & Joint Health Package',
-            icon: 'fa-bone',
-            color: '#079591',
-            description: 'Comprehensive screening for bone and joint health',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'ESR',
-              'CRP',
-              'Vitamin D3',
-              'Serum Calcium',
-              'RA Factor',
-              'Anti-CCP',
-              'Uric Acid',
-              'X-ray',
-              'Parathyroid Hormone (PTH)',
-              'Orthopaedician Consultation',
-              'Dietician Consultation'
-            ]
-          },
-          {
-            id: 'cancer',
-            name: 'Cancer Screening Package',
-            icon: 'fa-ribbon',
-            color: '#014196',
-            description: 'Early detection and screening for various cancers',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Plateletcount, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'ESR',
-              'Peripheral Smear',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
-              'Stool (Occult Blood)',
-              'Urine Routine',
-              'Total PSA (Male Only)',
-              'X-ray (Chest)',
-              'Ultrasound (Abdomen & Pelvis)',
-              'ECG',
-              'Pap Smear (Female only)',
-              'B/L Mammogram (Female only)',
-              'Onco-Physician Consultation',
-              'Dietician Consultation'
-            ]
-          },
-          {
-            id: 'women',
-            name: "Women's Health Package",
-            icon: 'fa-female',
-            color: '#079591',
-            description: 'Specialized health screening for women',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'ESR',
-              'Peripheral Smear',
               'HbA1c',
-              'FBS',
-              'PPBS',
-              'Thyroid Profile (T3, T4, TSH)',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
-              'Lipid Profile: Total Cholesterol, Triglycerides, HDL, LDL, VLDL',
-              'Renal Function Test: Blood Urea, Creatinine, Serum Electrolytes',
-              'Serum Calcium',
-              'Vitamin D3',
-              'Vitamin B12',
-              'CA-125',
-              'CA-15.3',
-              'Stool (Occult Blood)',
+              'Liver Function Test',
+              'Fasting Lipid Profile',
+              'Renal Function Tests (BUN, Serum Creatinine, Serum Electrolytes)',
               'Urine Routine',
-              'Pap Smear',
-              'B/L Mammogram',
-              'Ultrasound (Abdomen & Pelvis)',
+              'Ultrasound Abdomen and Pelvis',
               'ECG',
-              '2D Echo',
-              'DEXA Scan',
-              'Physician Consultation',
-              'Dietician Consultation',
-              'Gynaec Consultation'
-            ]
-          },
-          {
-            id: 'cardiac',
-            name: 'Cardiac Health Package',
-            icon: 'fa-heart',
-            color: '#014196',
-            description: 'Complete cardiovascular health assessment',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'HbA1c',
-              'FBS',
-              'PPBS',
-              'hsCRP',
-              'Lipid Profile: Total Cholesterol, Triglycerides, HDL, LDL, VLDL',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
-              'Renal Function Test: Blood Urea, Creatinine, Serum Electrolytes',
-              'Thyroid Profile (T3, T4, TSH)',
-              'Homocysteine levels',
-              'ECG',
-              '2D Echo',
-              'TMT',
-              'X-ray (Chest)',
-              'Cardialogist Consultation',  
-              'Dietician Consultation',
               'Physician Consultation'
             ]
           },
           {
-            id: 'children',
-            name: "Children's Health Package",
-            icon: 'fa-child',
-            color: '#079591',
-            description: 'Pediatric health screening and wellness check',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'FBS',
-              'PPBS',
-              'ESR',
-              'Peripheral Smear',
-              'Monteux Test',
-              'Lipid Profile: Total Cholesterol, Triglycerides, HDL, LDL, VLDL',
-              'Urine Routine',
-              'Stool Routine',
-              'X-ray (Chest)',
-              'Ultrasound (Abdomen & Pelvis)',
-              'Eye Check-Up',
-              'Ear Check-Up',
-              'Dental Check-Up',
-              'Paediatrician Consultation'
-            ]
-          },
-          {
-            id: 'comprehensive',
-            name: 'Comprehensive Health Package',
+            id: 'master-health',
+            name: 'Master Health Check-up',
             icon: 'fa-shield-alt',
-            color: '#014196',
-            description: 'Most extensive health screening package',
+            color: '#079591',
+            description: 'Extensive health check-up with specialist consultations',
+            price: 8499,
             tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
+              'Complete Blood Count (CBC): RBC, Hb, PCV, MCV, MCH, MCHC, RDW, TC, DC, Platelet Count',
+              'Blood Grouping and Rh Typing',
               'ESR',
-              'Peripheral Smear',
               'HbA1c',
               'FBS',
               'PPBS',
-              'TSH',
-              'Renal Function Test: Blood Urea, Creatinine, Serum Electrolytes',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
+              'Liver Function Test',
+              'Fasting Lipid Profile',
+              'Thyroid Profile (Total T3, Total T4, TSH, Free T3, Free T4)',
+              'Renal Function Tests (BUN, Serum Creatinine, Serum Electrolytes)',
+              'Stool for Occult Blood',
+              'Urine Routine',
+              'Ultrasound Abdomen and Pelvis',
+              'ECG',
+              '2D Echocardiogram',
+              'Chest X-ray',
+              'Physician Consultation',
+              'Nutritionist Consultation',
+              'Ophthalmologist Consultation',
+              'Gastroenterologist Consultation'
+            ]
+          },
+          {
+            id: 'executive-health',
+            name: 'Executive Health Check-up',
+            icon: 'fa-briefcase',
+            color: '#014196',
+            description: 'Premium comprehensive health screening for executives',
+            price: 12999,
+            tests: [
+              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
+              'Blood Grouping and Rh Typing',
+              'ESR',
+              'HbA1c',
+              'FBS',
+              'PPBS',
+              'Liver Function Test',
+              'Fasting Lipid Profile',
+              'Thyroid Profile (Total T3, Total T4, TSH, Free T3, Free T4)',
+              'Renal Function Tests (BUN, Serum Creatinine, Serum Electrolytes)',
               'Vitamin D3',
               'Vitamin B12',
               'Uric Acid',
               'HBsAG',
-              'Lipid Profile: Total Cholesterol, Triglycerides, HDL, LDL, VLDL',
-              'Stool (Occult Blood)',
+              'Stool for Occult Blood',
               'Urine Routine',
-              'Pap Smear (Female only)',
-              'Total PSA (Male only)',
-              'Ultrasound (Abdomen & Pelvis)',
-              '2D Echo',
+              'Ultrasound Abdomen and Pelvis',
               'ECG',
-              'X-ray (Chest)',
-              'B/L Mammagram (Female only)',
-              'Physician Consultation',
-              'Dietician Consultation'
-            ]
-          },
-          {
-            id: 'pulmonary',
-            name: 'Pulmonary Health Package',
-            icon: 'fa-lungs',
-            color: '#079591',
-            description: 'Respiratory and lung health assessment',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'ESR',
-              'RBS',
-              'X-ray (Chest)',
+              '2D Echocardiogram',
               'Pulmonary Function Test (PFT)',
-              'ECG',
-              '2D Echo',
-              'AEC',
-              'Physician / Pulmonologist Consultation'
-            ]
-          },
-          {
-            id: 'diabetics',
-            name: 'Diabetics Health Package',
-            icon: 'fa-tint',
-            color: '#014196',
-            description: 'Specialized care for diabetes management',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'HbA1c',
-              'FBS',  
-              'PPBS',
-              'Lipid Profile: Total Cholesterol, Triglycerides, HDL, LDL, VLDL',
-              'Thyroid Profile (T3, T4, TSH)',
-              'Renal Function Test: Blood Urea, Creatinine, Serum Electrolytes',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
-              'Urine Routine',
-              'Urinary Microalbuminuria',
-              'ECG',
-              '2D Echo',
-              'ESR',
-              'Eye Check-Up (Vision Screening, Fundoscopy)',
-              'Foot Screening',
-              'Physician consultation',
-              'Dietician Consulatation'
-            ]
-          },
-          {
-            id: 'executive',
-            name: 'Executive Health Check-Up Package',
-            icon: 'fa-briefcase',
-            color: '#079591',
-            description: 'Premium health screening for executives',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'ESR',
-              'Peripheral Smear',
-              'HbA1c',
-              'FBS',
-              'PPBS',
-              'TSH',
-              'Renal Function Test: Blood Urea, Creatinine, Serum Electrolytes',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
-              'Vitamin D3',
-              'Vitamin B12',
-              'Uric Acid',
-              'Lipid Profile: Total Cholesterol, Triglycerides, HDL, LDL, VLDL',
-              'Stool (Occult Blood)',
-              'Urine Routine',
-              'Pap Smear (Female only)',
-              'Total PSA (Male only)',
-              'Ultrasound (Abdomen & Pelvis)',
-              '2D Echo',
-              'ECG',
-              'X-ray (Chest)',
-              'B/L Mammogram (Female only)',
+              'Chest X-ray',
               'Physician Consultation',
-              'Dietician Consultation'
-            ]
-          },
-          {
-            id: 'ncds',
-            name: 'Non-Communicable Diseases (NCDs) Health Package',
-            icon: 'fa-user-shield',
-            color: '#014196',
-            description: 'Screening for non-communicable diseases',
-            tests: [
-              'Complete Blood Count (CBC): HB, PCV, TC, DC, RBC, Platelet Count, MCV, MCH, MCHC',
-              'Blood Group & Rh Type',
-              'ESR',
-              'Peripheral Smear',
-              'HbA1c',
-              'FBS',
-              'PPBS',
-              'TSH',
-              'Liver Function Test: Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, Total Protein, Albumin, Globulin, A/G Ratio, SGOT/AST, SGPT/ALT, Alkaline Phosphate, GGT',
-              'Renal Function Test: Blood Urea, Creatinine, Serum Electrolytes',
-              'Lipid Profile: Total Cholesterol, Triglycerides, HDL, LDL, VLDL',
-              'Stool (Occult Blood)',
-              'Urine Routine',
-              'Vitamin D3',
-              'Vitamin B12',
-              'Pap Smear (Female only)',
-              'Total PSA (Male only)',
-              'Ultrasound (Abdomen & Pelvis)',
-              'ECG',
-              'X-ray (Chest)',
-              'B/L Mammogram (Female only)',
-              'Onco-Physician Consultation',
-              'Dietician Consultation'
+              'Nutritionist Consultation',
+              'Ophthalmologist Consultation',
+              'Gastroenterologist Consultation',
+              'Cardiologist Consultation',
+              'Pulmonologist Consultation',
+              'Pap Smear (Female)',
+              'Total PSA (Male)'
             ]
           }
         ];
@@ -1201,7 +1041,7 @@
                 <div class="container mx-auto px-4 pb-8">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="stats-card animate-fadeInUp">
-                            <div class="stats-number">11</div>
+                            <div class="stats-number">5</div>
                             <div class="text-gray-600 mt-2">Health Packages</div>
                         </div>
                         
@@ -1247,17 +1087,11 @@
 
         // Icon style mapping for unique visual identity
         const iconStyleMap = {
-            'basic': 'gradient-primary',
-            'bone-joint': 'gradient-reverse',
-            'cancer': 'gradient-radial',
-            'women': 'gradient-diagonal',
-            'cardiac': 'gradient-vertical',
-            'children': 'gradient-horizontal',
-            'comprehensive': 'gradient-conic',
-            'pulmonary': 'gradient-diamond',
-            'diabetics': 'gradient-pulse',
-            'executive': 'gradient-shine',
-            'ncds': 'gradient-primary'
+            'oncology-male': 'gradient-radial',
+            'oncology-female': 'gradient-diagonal',
+            'basic-health': 'gradient-primary',
+            'master-health': 'gradient-conic',
+            'executive-health': 'gradient-shine'
         };
 
         // Render individual package card
@@ -1309,14 +1143,21 @@
                                     </div>
                                     
                                     <div class="text-right mt-2">
-                                        ${pkg.id === 'women' ? `
+                                        ${pkg.id === 'oncology-female' ? `
                                             <span class="text-sm" style="font-weight: 600; color: #014196; background: rgba(1, 65, 150, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #014196;">Suitable for Women</span>
-                                        ` : pkg.id === 'children' ? `
-                                            <span class="text-sm" style="font-weight: 600; color: #079591; background: rgba(7, 149, 145, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #079591;">Suitable for Children</span>
+                                        ` : pkg.id === 'oncology-male' ? `
+                                            <span class="text-sm" style="font-weight: 600; color: #079591; background: rgba(7, 149, 145, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #079591;">Suitable for Men</span>
                                         ` : `
                                             <span class="text-sm" style="font-weight: 600; color: #014196; background: rgba(1, 65, 150, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #014196;">Suitable for Male & Female</span>
                                         `}
                                     </div>
+                                    ${pkg.price ? `
+                                    <div class="text-right mt-2">
+                                        <span class="text-xs text-gray-500">Offer Price</span>
+                                        <div class="text-lg font-bold" style="color: #014196;">₹${pkg.price.toLocaleString('en-IN')}/-</div>
+                                        <div class="text-xs text-gray-500 mt-1">• Complimentary Breakfast Included</div>
+                                    </div>
+                                    ` : ''}
                                 </div>
                             </div>
                             <div class="test-list ${isExpanded ? 'expanded' : ''} mt-4" id="tests-${pkg.id}">
@@ -1380,14 +1221,21 @@
                                 </div>
                             </div>
                             <div class="flex justify-center mt-0">
-                                ${pkg.id === 'women' ? `
+                                ${pkg.id === 'oncology-female' ? `
                                     <span class="text-sm text-center" style="font-weight: 600; color: #014196; background: rgba(1, 65, 150, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #014196;">Suitable for Women</span>
-                                ` : pkg.id === 'children' ? `
-                                    <span class="text-sm text-center" style="font-weight: 600; color: #079591; background: rgba(7, 149, 145, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #079591;">Suitable for Children</span>
+                                ` : pkg.id === 'oncology-male' ? `
+                                    <span class="text-sm text-center" style="font-weight: 600; color: #079591; background: rgba(7, 149, 145, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #079591;">Suitable for Men</span>
                                 ` : `
                                     <span class="text-sm text-center" style="font-weight: 600; color: #014196; background: rgba(1, 65, 150, 0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid #014196;">Suitable for Male & Female</span>
                                 `}
                             </div>
+                            ${pkg.price ? `
+                            <div class="text-center mt-3">
+                                <span class="text-xs text-gray-500">Offer Price</span>
+                                <div class="text-lg font-bold" style="color: #014196;">₹${pkg.price.toLocaleString('en-IN')}/-</div>
+                                <div class="text-xs text-gray-500 mt-1">• Complimentary Breakfast Included</div>
+                            </div>
+                            ` : ''}
 
                             <button onclick="bookPackage('${pkg.id}')" 
                                     class="w-full mt-4 px-4 py-2 text-white rounded-lg transition hover:opacity-90"
@@ -1511,19 +1359,19 @@
                 filteredPackages = [...packages];
             } else if (category === 'basic') {
                 filteredPackages = packages.filter(pkg => 
-                    ['basic', 'pulmonary', 'diabetics'].includes(pkg.id)
+                    ['basic-health'].includes(pkg.id)
                 );
             } else if (category === 'specialized') {
                 filteredPackages = packages.filter(pkg => 
-                    ['bone-joint', 'cardiac', 'cancer', 'ncds'].includes(pkg.id)
+                    ['oncology-male', 'oncology-female'].includes(pkg.id)
                 );
             } else if (category === 'comprehensive') {
                 filteredPackages = packages.filter(pkg => 
-                    ['comprehensive', 'executive'].includes(pkg.id)
+                    ['master-health', 'executive-health'].includes(pkg.id)
                 );
             } else if (category === 'gender') {
                 filteredPackages = packages.filter(pkg => 
-                    ['women', 'children'].includes(pkg.id)
+                    ['oncology-male', 'oncology-female'].includes(pkg.id)
                 );
             }
 
@@ -1801,8 +1649,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../footer-main.css" /> 
-    <link rel="stylesheet" href="../chatbox.css" /> 
+<link rel="stylesheet" href="../chatbox.css" /> 
 </head>
 <body>
     <button id="chat-fab3" class="pulse3" aria-label="Open chat support">
@@ -1842,7 +1689,6 @@
         </form>
     </div>
 <script src="../chatbox.js"></script>
-<script src="../footer-main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
