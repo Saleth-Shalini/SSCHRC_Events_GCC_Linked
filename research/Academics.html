@@ -1152,6 +1152,47 @@
             color: #fff;
         }
 
+        .fellowship-brochure-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 1.75rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid #e8eef5;
+        }
+
+        .fellowship-brochure-item {
+            text-align: left;
+        }
+
+        .fellowship-brochure-item i {
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .fellowship-brochure-item h5 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .fellowship-brochure-item p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+            line-height: 1.45;
+        }
+
+        @media (max-width: 768px) {
+            .fellowship-brochure-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .badge {
             display: inline-block;
             padding: 5px 12px;
@@ -2157,7 +2198,11 @@
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Fellowship in Onco Pharmacy</td>
+                                        <td>
+                                            <a class="programme-link" href="#notif-onco-pharmacy">
+                                                Fellowship in Onco Pharmacy
+                                            </a>
+                                        </td>
                                         <td><span class="badge badge-rguhs">RGUHS</span></td>
                                     </tr>
                                     <tr>
@@ -2167,7 +2212,11 @@
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>Fellowship in Clinical Psychology</td>
+                                        <td>
+                                            <a class="programme-link" href="#notif-clinical-psycho-oncology">
+                                                Fellowship in Clinical Psycho-Oncology
+                                            </a>
+                                        </td>
                                         <td><span class="badge badge-rguhs">RGUHS</span></td>
                                     </tr>
                                 </tbody>
@@ -2208,8 +2257,16 @@
                                     </tr>
                                     <tr>
                                         <td>9</td>
-                                        <td>Fellowship in Hemato Oncopathology</td>
-                                        <td></td>
+                                        <td>
+                                            <a class="programme-link" href="#notif-hemato-oncopathology">
+                                                Fellowship in Hemato-Oncopathology
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="btn application-btn" href="Fellowship in Hemato-Oncopathology.pdf" target="_blank" rel="noopener">
+                                                Admission Announcement
+                                            </a>
+                                        </td>
                                         <td><span class="badge badge-inst">SSCHRC</span></td>
                                     </tr>
                                     <tr>
@@ -2550,18 +2607,50 @@
                 <p style="color: var(--text-light); font-size: 1.1rem;">Stay updated with the latest notifications and announcements from the Division of Academics and Training.</p>
             </div>
 
-            <div class="highlights-grid" style="max-width: 1000px; margin: 0 auto; padding-bottom: 2rem;">
+            <div class="highlights-grid" style="max-width: 1000px; margin: 0 auto; padding-bottom: 2rem; grid-template-columns: 1fr;">
                 <div class="highlight-card" id="notif-plastic-reconstructive" style="text-align: left;">
                     <i class="fas fa-bullhorn"></i>
-                    <h4>Fellowship Application Forms and Brochers</h4>
-                    <p>Download the application form and course details.</p>
+                    <h4>Applications Invited for Fellowship Programmes (Institutional Affiliation)</h4>
+                    <p>Download the admission announcement for each fellowship programme below. Application form is also available.</p>
                     <div class="notification-actions">
                         <a class="btn btn-primary" href="SSCHRC Fellowship-Application 2026.doc" target="_blank" rel="noopener">
-                            SSCHRC Fellowship-Application 2026.doc
+                            SSCHRC Fellowship Application Form
                         </a>
-                        <a class="btn btn-outline" href="1. Fellowship Courses 2026 (1).pdf" target="_blank" rel="noopener">
-                            Fellowship Courses 2026.pdf
-                        </a>
+                    </div>
+
+                    <div class="fellowship-brochure-grid">
+                        <div class="fellowship-brochure-item" id="notif-hemato-oncopathology">
+                            <i class="fas fa-file-medical"></i>
+                            <h5>Fellowship in Hemato-Oncopathology</h5>
+                            <p>Download the brochure / admission announcement for this programme.</p>
+                            <div class="notification-actions">
+                                <a class="btn btn-outline" href="Fellowship in Hemato-Oncopathology.pdf" target="_blank" rel="noopener">
+                                    Brochure (PDF)
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="fellowship-brochure-item" id="notif-clinical-psycho-oncology">
+                            <i class="fas fa-brain"></i>
+                            <h5>Fellowship in Clinical Psycho-Oncology</h5>
+                            <p>Download the brochure / admission announcement for this programme.</p>
+                            <div class="notification-actions">
+                                <a class="btn btn-outline" href="Fellowship in Clinical Psycho-Oncology.pdf" target="_blank" rel="noopener">
+                                    Brochure (PDF)
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="fellowship-brochure-item" id="notif-onco-pharmacy">
+                            <i class="fas fa-pills"></i>
+                            <h5>Fellowship in Onco Pharmacy</h5>
+                            <p>Download the brochure / admission announcement for this programme.</p>
+                            <div class="notification-actions">
+                                <a class="btn btn-outline" href="Fellowship in Onco Pharmacy.pdf" target="_blank" rel="noopener">
+                                    Brochure (PDF)
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
