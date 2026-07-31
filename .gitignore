@@ -1,0 +1,5 @@
+# Cloudflare Pages rejects files larger than 25 MiB
+video/Banner.mp4
+.DS_Store
+Thumbs.db
+_cf_pages_deploy_*/
