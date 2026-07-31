@@ -3471,46 +3471,6 @@
             box-shadow: 0 0 12px rgba(0, 51, 128, 0.45);
         }
 
-        .gcc-back-top {
-            position: fixed;
-            bottom: 5.5rem;
-            right: 1.25rem;
-            z-index: 45;
-            width: 2.75rem;
-            height: 2.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            border-radius: 50%;
-            background: var(--gcc-brand-gradient);
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0, 51, 128, 0.4);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(12px) scale(0.9);
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s var(--gcc-ease-out), background-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .gcc-back-top.is-visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0) scale(1);
-        }
-
-        .gcc-back-top:hover {
-            background: var(--gcc-green-dark);
-            box-shadow: 0 8px 28px rgba(0, 51, 128, 0.5);
-            transform: translateY(-3px) scale(1.05);
-        }
-
-        .gcc-back-top:focus-visible {
-            outline: 2px solid var(--gcc-green);
-            outline-offset: 3px;
-        }
-
         .gcc-nav-indicator {
             display: none;
         }
@@ -3575,7 +3535,6 @@
                 transition: none !important;
             }
             .info-card:hover { transform: none; }
-            .gcc-back-top { transition: opacity 0.2s ease, visibility 0.2s ease; }
         }
 
         @media (max-width: 767px) {
@@ -4187,10 +4146,6 @@
     <div class="gcc-reading-progress" aria-hidden="true">
         <div class="gcc-reading-progress__bar" id="gcc-reading-progress-bar"></div>
     </div>
-
-    <button type="button" class="gcc-back-top" id="gcc-back-top" aria-label="Back to top" hidden>
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
 
     <header id="dynamic-header"></header>
     <script src="header.js"></script>
@@ -5113,7 +5068,6 @@
             var navIndicator = document.getElementById('gcc-nav-indicator');
             var navLinks = document.querySelectorAll('.gcc-section-nav a[data-nav]');
             var progressBar = document.getElementById('gcc-reading-progress-bar');
-            var backTop = document.getElementById('gcc-back-top');
             var sections = [];
             var revealObserver;
             var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -5167,15 +5121,6 @@
                 var docHeight = document.documentElement.scrollHeight - window.innerHeight;
                 var pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
                 if (progressBar) progressBar.style.width = pct + '%';
-                if (backTop) {
-                    if (scrollTop > 400) {
-                        backTop.classList.add('is-visible');
-                        backTop.hidden = false;
-                    } else {
-                        backTop.classList.remove('is-visible');
-                        backTop.hidden = true;
-                    }
-                }
                 if (nav) nav.classList.toggle('is-scrolled', scrollTop > 20);
             }
 
@@ -5299,12 +5244,6 @@
 
             window.addEventListener('hashchange', syncHashNav);
             window.addEventListener('popstate', syncHashNav);
-
-            if (backTop) {
-                backTop.addEventListener('click', function () {
-                    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-                });
-            }
 
             window.addEventListener('scroll', function () {
                 updateProgress();

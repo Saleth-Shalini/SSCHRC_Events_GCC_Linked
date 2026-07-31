@@ -1230,11 +1230,6 @@ body {
     background: var(--gcc-brand-gradient-h) !important;
 }
 
-.gcc-back-top {
-    background: var(--gcc-brand-gradient) !important;
-    box-shadow: 0 6px 20px rgba(0, 51, 128, 0.35) !important;
-}
-
 /* ── Guidelines list ── */
 .gcc-guidelines-timeline li {
     background: transparent !important;
@@ -1490,10 +1485,6 @@ body {
 
 .gcc-committee-lead__meta {
     color: #4a6578 !important;
-}
-
-.gcc-back-top:hover {
-    background: #1a4d99 !important;
 }
 
 /* Selection highlight */
