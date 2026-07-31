@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upcoming and completed CME programs at Sri Shankara Cancer Hospital & Research Centre.">
+    <link rel="canonical" href="https://srishankaracancerhospital.org/events-and-programs/cme" />
+    <title>CME Programs | Sri Shankara Cancer Hospital</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hospital-green': '#2E8B57',
+                        'hospital-orange': '#FF4500',
+                        'cme-ink': '#0B1F33',
+                        'cme-slate': '#3D5568',
+                        'cme-blue': '#1A5F9E'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../chatbox.css">
+
+    <style>
+        :root {
+            --cme-ink: #0B1F33;
+            --cme-slate: #3D5568;
+            --cme-blue: #1A5F9E;
+            --cme-mist: #F4F7FA;
+            --cme-line: #D9E4EF;
+        }
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--cme-ink);
+            background:
+                radial-gradient(ellipse 70% 45% at 8% 0%, rgba(26,95,158,0.08), transparent 55%),
+                linear-gradient(180deg, #F7F9FC, #EEF3F8);
+        }
+        .cme-page { padding: clamp(1.25rem, 3.5vw, 2.75rem) 0 3.5rem; }
+        .cme-back {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: var(--cme-blue); font-weight: 600; font-size: 0.9rem;
+            text-decoration: none; margin-bottom: 1rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .cme-back:hover { color: var(--cme-ink); transform: translateX(-2px); }
+
+        /* Hero motion */
+        @keyframes cmeHeroIn {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cmeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes cmePulseRing {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.65; transform: scale(1.03); }
+        }
+        .cme-hero {
+            animation: cmeHeroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .cme-hero__copy > * {
+            animation: cmeHeroIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .cme-hero__copy > *:nth-child(1) { animation-delay: 0.05s; }
+        .cme-hero__copy > *:nth-child(2) { animation-delay: 0.12s; }
+        .cme-hero__copy > *:nth-child(3) { animation-delay: 0.18s; }
+        .cme-hero__visual {
+            animation: cmeHeroIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+        }
+        .cme-hero__orb { animation: cmeFloat 7s ease-in-out infinite; }
+        .cme-hero__ring { animation: cmePulseRing 5.5s ease-in-out infinite; }
+
+        .cme-hero {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border-radius: 1.4rem;
+            border: 1px solid rgba(217, 228, 239, 0.95);
+            background: #fff;
+            box-shadow: 0 22px 50px rgba(11, 31, 51, 0.09);
+        }
+        .cme-hero__layout {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 900px) {
+            .cme-hero__layout {
+                grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+                align-items: stretch;
+            }
+        }
+        .cme-hero__copy {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.35rem 1.25rem 1.25rem;
+        }
+        @media (min-width: 640px) {
+            .cme-hero__copy { padding: 1.6rem 1.6rem 1.4rem; }
+        }
+        @media (min-width: 900px) {
+            .cme-hero__copy { padding: 1.85rem 1.75rem 1.6rem 2rem; }
+        }
+        .cme-hero__kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            margin: 0 0 0.85rem;
+            padding: 0.35rem 0.75rem 0.35rem 0.35rem;
+            border-radius: 999px;
+            border: 1px solid var(--cme-line);
+            background: rgba(255, 255, 255, 0.88);
+            color: var(--cme-blue);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            box-shadow: 0 6px 16px rgba(11, 31, 51, 0.05);
+        }
+        .cme-hero__kicker-icon {
+            display: grid;
+            place-items: center;
+            width: 1.55rem;
+            height: 1.55rem;
+            border-radius: 999px;
+            background: #EAF3FA;
+            font-size: 0.7rem;
+        }
+        .cme-hero__title {
+            margin: 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 5vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.02;
+            letter-spacing: -0.015em;
+            color: var(--cme-ink);
+        }
+        .cme-hero__title-rule {
+            display: block;
+            width: 3.5rem;
+            height: 3px;
+            margin-top: 0.75rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--cme-blue), #7EB3D9);
+        }
+        .cme-hero__lead {
+            margin: 1rem 0 0;
+            max-width: 34rem;
+            color: var(--cme-slate);
+            font-size: 1.02rem;
+            line-height: 1.65;
+        }
+
+        .cme-hero__visual {
+            position: relative;
+            z-index: 1;
+            min-height: 13.5rem;
+            overflow: hidden;
+            background: linear-gradient(145deg, #0B1F33 0%, #164E82 48%, #1A5F9E 100%);
+        }
+        @media (min-width: 900px) {
+            .cme-hero__visual {
+                min-height: 100%;
+                border-left: 1px solid rgba(255, 255, 255, 0.08);
+            }
+        }
+        .cme-hero__visual-inner {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.9rem;
+            height: 100%;
+            min-height: inherit;
+            padding: 1.35rem 1.25rem;
+        }
+        @media (min-width: 900px) {
+            .cme-hero__visual-inner { padding: 1.75rem 1.5rem; }
+        }
+        .cme-hero__feature {
+            position: relative;
+            padding: 1.1rem 1.15rem 1.15rem;
+            border-radius: 1.1rem;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            color: #fff;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .cme-hero__feature:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.16);
+        }
+        .cme-hero__feature-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin: 0 0 0.55rem;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.78);
+        }
+        .cme-hero__feature-label i { color: #93c5fd; }
+        .cme-hero__feature-title {
+            margin: 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .cme-hero__feature-meta {
+            margin: 0.55rem 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            font-size: 0.86rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.82);
+        }
+        .cme-hero__feature-meta span {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 0.45rem;
+        }
+        .cme-hero__feature-meta i {
+            margin-top: 0.15rem;
+            width: 0.9rem;
+            color: #93c5fd;
+            text-align: center;
+        }
+        .cme-hero__chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+        .cme-hero__chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .cme-hero__chip i { font-size: 0.68rem; color: #bfdbfe; }
+
+        .cme-toolbar {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.9rem 1.25rem;
+            border-top: 1px solid rgba(217, 228, 239, 0.95);
+            background: linear-gradient(180deg, rgba(247, 250, 252, 0.98), rgba(242, 247, 251, 0.95));
+        }
+        @media (min-width: 640px) {
+            .cme-toolbar { padding: 0.95rem 1.6rem; }
+        }
+        @media (min-width: 900px) {
+            .cme-toolbar { padding: 1rem 2rem; }
+        }
+        .cme-tabs {
+            display: inline-flex;
+            gap: 0.25rem;
+            padding: 0.25rem;
+            border-radius: 999px;
+            border: 1px solid var(--cme-line);
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(11, 31, 51, 0.05);
+        }
+        .cme-tab {
+            border: 0;
+            background: transparent;
+            color: var(--cme-slate);
+            font: inherit;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.05rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+        }
+        .cme-tab:hover { color: var(--cme-ink); }
+        .cme-tab.is-active {
+            background: linear-gradient(135deg, #0B1F33, #163A5C);
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(11, 31, 51, 0.2);
+        }
+        .cme-tab.is-active:hover { color: #fff; }
+        .cme-upload-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.6rem 1.05rem;
+            border-radius: 999px;
+            background: #fff;
+            border: 1.5px solid var(--cme-line);
+            color: var(--cme-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            box-shadow: 0 6px 16px rgba(11, 31, 51, 0.05);
+            transition: border-color 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+        }
+        .cme-upload-link:hover {
+            border-color: var(--cme-blue);
+            color: var(--cme-ink);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(26, 95, 158, 0.12);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .cme-hero,
+            .cme-hero__copy > *,
+            .cme-hero__visual,
+            .cme-hero__orb,
+            .cme-hero__ring,
+            .cme-hero__feature { animation: none !important; transition: none !important; }
+        }
+
+        .cme-panel[hidden] { display: none !important; }
+        .cme-grid {
+            display: grid; gap: 1.15rem;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 700px) {
+            .cme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1080px) {
+            .cme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        .flyer-card {
+            --card-accent: #1A5F9E;
+            --card-accent-soft: #E8F1F8;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--cme-line);
+            border-radius: 1.25rem;
+            padding: 1.25rem 1.2rem 1.2rem;
+            box-shadow: 0 14px 30px rgba(11,31,51,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-height: 100%;
+        }
+        .flyer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 42px rgba(11,31,51,0.12);
+        }
+
+        .flyer-card--a {
+            --card-accent: #1A5F9E;
+            --card-accent-soft: #EAF3FA;
+            background: linear-gradient(145deg, #F7FBFE 0%, #FFFFFF 48%, #F4F8FC 100%);
+            border-color: color-mix(in srgb, var(--card-accent) 22%, white);
+            padding-left: 1.35rem;
+        }
+        .flyer-card--a::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 6px;
+            background: linear-gradient(180deg, #1A5F9E, #3D8FD1);
+        }
+
+        .flyer-card--b {
+            --card-accent: #6B1E3A;
+            --card-accent-soft: #F7EBEF;
+            padding: 0;
+            gap: 0;
+        }
+        .flyer-card--b .flyer-card__head {
+            background: linear-gradient(135deg, #4E1630 0%, #7A2548 100%);
+            color: #fff;
+            padding: 1.2rem 1.2rem 1.1rem;
+        }
+        .flyer-card--b .flyer-card__title { color: #fff; }
+        .flyer-card--b .flyer-card__badge {
+            background: rgba(255,255,255,0.16);
+            color: #fff;
+        }
+        .flyer-card--b .flyer-card__body {
+            padding: 1.1rem 1.2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex: 1;
+        }
+        .flyer-card--b .flyer-card__fact-icon {
+            background: var(--card-accent-soft);
+            color: var(--card-accent);
+            border-color: color-mix(in srgb, var(--card-accent) 18%, white);
+        }
+        .flyer-card--b .flyer-btn--primary { background: var(--card-accent); }
+        .flyer-card--b .flyer-btn--primary:hover { background: #53162e; color: #fff; }
+
+        .flyer-card--c {
+            --card-accent: #0F6B63;
+            --card-accent-soft: #E7F5F3;
+            border-color: color-mix(in srgb, var(--card-accent) 20%, white);
+            background:
+                radial-gradient(circle at 100% 0%, rgba(15,107,99,0.1), transparent 42%),
+                #fff;
+        }
+        .flyer-card--c .flyer-card__datechip {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 4.4rem;
+            padding: 0.55rem 0.5rem;
+            border-radius: 0.9rem;
+            background: var(--card-accent);
+            color: #fff;
+            text-align: center;
+            line-height: 1.15;
+            box-shadow: 0 10px 20px rgba(15,107,99,0.22);
+        }
+        .flyer-card--c .flyer-card__datechip strong {
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+        .flyer-card--c .flyer-card__datechip span {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            opacity: 0.92;
+        }
+        .flyer-card--c .flyer-card__fact-icon {
+            background: var(--card-accent-soft);
+            color: var(--card-accent);
+            border-color: color-mix(in srgb, var(--card-accent) 18%, white);
+        }
+        .flyer-card--c .flyer-btn--primary { background: var(--card-accent); }
+        .flyer-card--c .flyer-btn--primary:hover { background: #0b524c; color: #fff; }
+
+        .flyer-card__top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.85rem;
+        }
+        .flyer-card__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--card-accent-soft);
+            color: var(--card-accent);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+        }
+        .flyer-card__badge.is-completed {
+            background: color-mix(in srgb, var(--cme-slate) 12%, white);
+            color: var(--cme-slate);
+        }
+        .flyer-card__title {
+            margin: 0.4rem 0 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--cme-ink);
+        }
+        .flyer-card__facts {
+            display: grid;
+            gap: 0.75rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .flyer-card__fact {
+            display: grid;
+            grid-template-columns: 2.1rem 1fr;
+            gap: 0.7rem;
+            align-items: start;
+        }
+        .flyer-card__fact-icon {
+            width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 0.7rem;
+            display: inline-grid;
+            place-items: center;
+            background: var(--card-accent-soft);
+            color: var(--card-accent);
+            border: 1px solid color-mix(in srgb, var(--card-accent) 16%, white);
+            flex-shrink: 0;
+        }
+        .flyer-card__fact-label {
+            display: block;
+            margin: 0 0 0.1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cme-slate);
+        }
+        .flyer-card__fact-value {
+            margin: 0;
+            color: var(--cme-ink);
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+        .flyer-card__assoc {
+            margin: 0;
+            padding-top: 0.1rem;
+            color: var(--cme-slate);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+        .flyer-card__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-top: auto;
+            padding-top: 0.2rem;
+        }
+        .flyer-btn {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            min-height: 2.5rem; padding: 0.55rem 1rem; border-radius: 999px;
+            font-weight: 700; font-size: 0.9rem; text-decoration: none;
+        }
+        .flyer-btn--primary { background: var(--cme-ink); color: #fff; }
+        .flyer-btn--primary:hover { background: #14324f; color: #fff; }
+        .flyer-btn--ghost { background: var(--cme-mist); color: var(--cme-blue); border: 1px solid var(--cme-line); }
+        .flyer-btn--ghost:hover { border-color: var(--cme-blue); color: var(--cme-ink); }
+        .flyer-card--b .flyer-btn--ghost {
+            background: #fff;
+            color: var(--card-accent);
+            border-color: color-mix(in srgb, var(--card-accent) 22%, white);
+        }
+        .flyer-card--b .flyer-btn--ghost:hover {
+            border-color: var(--card-accent);
+            color: #53162e;
+        }
+
+        .cme-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: #fff; border: 1px dashed var(--cme-line);
+            border-radius: 1.15rem; padding: 2.5rem 1.25rem;
+            color: var(--cme-slate);
+        }
+        .cme-empty i { font-size: 1.6rem; color: var(--cme-blue); margin-bottom: 0.6rem; }
+        .cme-empty h3 { margin: 0 0 0.35rem; color: var(--cme-ink); font-size: 1.2rem; }
+        .cme-empty p { margin: 0 auto; max-width: 34rem; line-height: 1.55; }
+
+        .cme-count {
+            margin: 0 0 0.85rem;
+            color: var(--cme-slate);
+            font-size: 0.92rem; font-weight: 600;
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EM0LW3CT3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9EM0LW3CT3');
+    </script>
+</head>
+<body>
+    <header id="dynamic-header"></header>
+    <script src="../header.js"></script>
+
+    <main class="cme-page">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="index.html" class="cme-back">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                Back to Events &amp; Programs
+            </a>
+
+            <section class="cme-hero" aria-labelledby="cme-heading">
+                <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_0%,rgba(26,95,158,0.08),transparent_55%)]" aria-hidden="true"></div>
+
+                <div class="cme-hero__layout relative">
+                    <div class="cme-hero__copy">
+                        <p class="cme-hero__kicker">
+                            <span class="cme-hero__kicker-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+                            Continuing Medical Education
+                        </p>
+                        <h1 id="cme-heading" class="cme-hero__title">
+                            CME Programs
+                            <span class="cme-hero__title-rule" aria-hidden="true"></span>
+                        </h1>
+                        <p class="cme-hero__lead">
+                            Browse upcoming CME sessions and revisit completed program flyers from Sri Shankara Cancer Hospital &amp; Research Centre.
+                        </p>
+                    </div>
+
+                    <div class="cme-hero__visual">
+                        <div class="pointer-events-none absolute -right-12 -top-16 h-52 w-52 rounded-full bg-white/10 blur-2xl cme-hero__orb" aria-hidden="true"></div>
+                        <div class="pointer-events-none absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-sky-300/20 blur-2xl" aria-hidden="true"></div>
+                        <div class="cme-hero__ring pointer-events-none absolute right-[12%] top-[18%] h-28 w-28 rounded-full border border-white/20" aria-hidden="true"></div>
+                        <div class="pointer-events-none absolute right-[18%] top-[28%] h-16 w-16 rounded-full border border-white/15" aria-hidden="true"></div>
+
+                        <div class="cme-hero__visual-inner">
+                            <div class="cme-hero__feature" id="cme-hero-next" aria-live="polite">
+                                <p class="cme-hero__feature-label">
+                                    <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                                    Next session
+                                </p>
+                                <h2 class="cme-hero__feature-title" id="cme-hero-next-title">Head &amp; Neck COMPLICON-4</h2>
+                                <div class="cme-hero__feature-meta" id="cme-hero-next-meta">
+                                    <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 11th July 2026</span>
+                                    <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> SSCHRC, Bengaluru</span>
+                                </div>
+                            </div>
+
+                            <div class="cme-hero__chips">
+                                <span class="cme-hero__chip"><i class="fas fa-stethoscope" aria-hidden="true"></i> Clinical education</span>
+                                <span class="cme-hero__chip"><i class="fas fa-file-image" aria-hidden="true"></i> Flyer archive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cme-toolbar">
+                    <div class="cme-tabs" role="tablist" aria-label="CME categories">
+                        <button type="button" class="cme-tab is-active" role="tab" aria-selected="true" data-tab="upcoming" id="tab-upcoming">
+                            Upcoming CME
+                        </button>
+                        <button type="button" class="cme-tab" role="tab" aria-selected="false" data-tab="completed" id="tab-completed">
+                            Completed CME
+                        </button>
+                    </div>
+                    <a class="cme-upload-link" href="cme-upload.html">
+                        <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                        Upload flyer
+                    </a>
+                </div>
+            </section>
+
+            <p class="cme-count" id="cme-count" aria-live="polite"></p>
+
+            <section id="panel-upcoming" class="cme-panel" role="tabpanel" aria-labelledby="tab-upcoming">
+                <div class="cme-grid" id="grid-upcoming"></div>
+            </section>
+
+            <section id="panel-completed" class="cme-panel" role="tabpanel" aria-labelledby="tab-completed" hidden>
+                <div class="cme-grid" id="grid-completed"></div>
+            </section>
+        </div>
+    </main>
+
+    <script type="application/json" id="cme-flyers-data">
+{
+  "upcoming": [
+    {
+      "id": "cme-2026-07-11-complicon-4",
+      "title": "Head & Neck COMPLICON-4",
+      "date": "2026-07-11",
+      "dateLabel": "11th July 2026",
+      "time": "",
+      "venue": "Sri Shankara Cancer Hospital & Research Centre, Bengaluru",
+      "flyer": "assets/cme/flyers/upcoming/Complicon_4.png",
+      "brochure": "assets/cme/flyers/upcoming/Complicon_4_Brochure.pdf",
+      "organizedBy": "Sri Shankara Cancer Hospital & Research Centre, Bengaluru",
+      "association": "Head & Neck Oncology Conference — Perioperative Complications Following Major Head & Neck Surgery"
+    },
+    {
+      "id": "cme-2026-08-07-chitradurga",
+      "title": "CME — Chitradurga",
+      "date": "2026-08-07",
+      "dateLabel": "Friday, 7th August 2026",
+      "time": "08:00pm Onwards",
+      "venue": "Aishwarya Fort Hotel, Near RTO Office, Turuvanur Road, Chitradurga - 577501",
+      "flyer": "assets/cme/flyers/upcoming/CME_7th_August_Chitradurga.png",
+      "organizedBy": "Sri Shankara Cancer Hospital & Research Centre, Bangalore",
+      "association": "Indian Academy of Paediatrics, Chitradurga (IAP)"
+    }
+  ],
+  "completed": []
+}
+    </script>
+
+    <footer id="hospital-footer"></footer>
+
+    <button id="chat-fab3" class="pulse3" aria-label="Open chat support">
+        <svg viewBox="0 0 24 24">
+            <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2M6,9V7H18V9H6M14,11V13H6V11H14M16,15H6V17H16V15Z"/>
+        </svg>
+    </button>
+
+    <div id="chatbox-container3">
+        <div id="chatbox-header3">
+            <div class="header-content3">
+                <div class="avatar3">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                    </svg>
+                </div>
+            </div>
+            <button id="chatbox-close3" aria-label="Close chatbox">&times;</button>
+        </div>
+        <div id="chatbox-body3">
+            <div id="chatbox-messages3" style="display:none;"></div>
+            <div id="chatbox-faq-buttons3" style="display:none;"></div>
+        </div>
+        <form id="chatbox-form3" style="display:none;">
+            <div id="chatbox-input-area3">
+                <input type="text" id="chatbox-input3" placeholder="Type your message here..." autocomplete="off" required />
+                <button type="submit" id="chatbox-send-btn3">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../footer.js"></script>
+    <script src="../chatbox.js"></script>
+    <script>
+    (function () {
+        var data = { upcoming: [], completed: [] };
+        var countEl = document.getElementById('cme-count');
+
+        function escapeHtml(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function factRow(icon, label, value) {
+            if (!value) return '';
+            return (
+                '<li class="flyer-card__fact">' +
+                    '<span class="flyer-card__fact-icon" aria-hidden="true"><i class="fas ' + icon + '"></i></span>' +
+                    '<div>' +
+                        '<span class="flyer-card__fact-label">' + escapeHtml(label) + '</span>' +
+                        '<p class="flyer-card__fact-value">' + value + '</p>' +
+                    '</div>' +
+                '</li>'
+            );
+        }
+
+        function dateChipHtml(item) {
+            var raw = item.date || '';
+            var parts = raw.split('-');
+            if (parts.length < 3) return '';
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var day = String(parseInt(parts[2], 10));
+            var mon = months[parseInt(parts[1], 10) - 1] || '';
+            return '<div class="flyer-card__datechip" aria-hidden="true"><strong>' + escapeHtml(day) + '</strong><span>' + escapeHtml(mon) + '</span></div>';
+        }
+
+        function cardHtml(item, type, index) {
+            var flyer = item.flyer || '';
+            var brochure = item.brochure || '';
+            var isUpcoming = type === 'upcoming';
+            var variants = ['b', 'a', 'c'];
+            var variant = variants[index % variants.length];
+            // Prefer burgundy style for COMPLICON-style conferences.
+            if (/complicon/i.test(item.title || '') || /complicon/i.test(item.id || '')) {
+                variant = 'b';
+            } else if (variant === 'b') {
+                variant = 'a';
+            }
+            var badgeClass = 'flyer-card__badge' + (isUpcoming ? '' : ' is-completed');
+            var dateText = escapeHtml(item.dateLabel || item.date || '');
+            if (item.time) {
+                dateText = dateText
+                    ? dateText + '<br>' + escapeHtml(item.time)
+                    : escapeHtml(item.time);
+            }
+
+            var facts = '';
+            // Variant C already highlights date in chip, so skip repeating date row there.
+            if (variant !== 'c') {
+                facts += factRow('fa-calendar-alt', 'Date & Time', dateText);
+            } else if (item.time) {
+                facts += factRow('fa-clock', 'Time', escapeHtml(item.time));
+            }
+            facts += factRow('fa-map-marker-alt', 'Venue', escapeHtml(item.venue || ''));
+            if (item.organizedBy) {
+                facts += factRow('fa-hospital', 'Organised by', escapeHtml(item.organizedBy));
+            }
+
+            var actions =
+                '<div class="flyer-card__actions">' +
+                    (flyer
+                        ? '<a class="flyer-btn flyer-btn--primary" href="' + escapeHtml(flyer) + '" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> View flyer</a>'
+                        : '') +
+                    (brochure
+                        ? '<a class="flyer-btn flyer-btn--ghost" href="' + escapeHtml(brochure) + '" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-open"></i> View brochure</a>'
+                        : '') +
+                '</div>';
+
+            var headInner =
+                '<div class="flyer-card__top">' +
+                    '<div>' +
+                        '<span class="' + badgeClass + '">' + (isUpcoming ? 'Upcoming' : 'Completed') + '</span>' +
+                        '<h2 class="flyer-card__title">' + escapeHtml(item.title || 'CME') + '</h2>' +
+                    '</div>' +
+                    (variant === 'c' ? dateChipHtml(item) : '') +
+                '</div>';
+
+            var bodyInner =
+                '<ul class="flyer-card__facts">' + facts + '</ul>' +
+                (item.association
+                    ? '<p class="flyer-card__assoc">In association with ' + escapeHtml(item.association) + '</p>'
+                    : '') +
+                actions;
+
+            if (variant === 'b') {
+                return (
+                    '<article class="flyer-card flyer-card--b">' +
+                        '<div class="flyer-card__head">' + headInner + '</div>' +
+                        '<div class="flyer-card__body">' + bodyInner + '</div>' +
+                    '</article>'
+                );
+            }
+
+            return (
+                '<article class="flyer-card flyer-card--' + variant + '">' +
+                    headInner +
+                    bodyInner +
+                '</article>'
+            );
+        }
+
+        function emptyHtml(type) {
+            var isUpcoming = type === 'upcoming';
+            return (
+                '<div class="cme-empty">' +
+                    '<i class="fas ' + (isUpcoming ? 'fa-calendar-plus' : 'fa-folder-open') + '" aria-hidden="true"></i>' +
+                    '<h3>No ' + type + ' CME flyers yet</h3>' +
+                    '<p>' + (isUpcoming
+                        ? 'Upload a flyer using the Upload flyer button to list your next CME here.'
+                        : 'Completed CME flyers will appear here after you upload them under Completed CME.') +
+                    '</p>' +
+                '</div>'
+            );
+        }
+
+        function renderList(type) {
+            var grid = document.getElementById('grid-' + type);
+            var list = Array.isArray(data[type]) ? data[type].slice() : [];
+            list.sort(function (a, b) {
+                var cmp = String(a.date || '').localeCompare(String(b.date || ''));
+                return type === 'upcoming' ? cmp : -cmp;
+            });
+            if (!list.length) {
+                grid.innerHTML = emptyHtml(type);
+            } else {
+                grid.innerHTML = list.map(function (item, index) { return cardHtml(item, type, index); }).join('');
+            }
+            return list.length;
+        }
+
+        function setTab(type) {
+            var upcoming = type === 'upcoming';
+            document.querySelectorAll('.cme-tab').forEach(function (btn) {
+                var active = btn.getAttribute('data-tab') === type;
+                btn.classList.toggle('is-active', active);
+                btn.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            document.getElementById('panel-upcoming').hidden = !upcoming;
+            document.getElementById('panel-completed').hidden = upcoming;
+            var count = upcoming ? data.upcoming.length : data.completed.length;
+            countEl.textContent = count + ' ' + (upcoming ? 'upcoming' : 'completed') + ' CME' + (count === 1 ? '' : 's');
+            if (history.replaceState) {
+                history.replaceState(null, '', '#' + type);
+            } else {
+                location.hash = type;
+            }
+        }
+
+        function readEmbeddedData() {
+            var el = document.getElementById('cme-flyers-data');
+            if (!el) return { upcoming: [], completed: [] };
+            try {
+                var parsed = JSON.parse(el.textContent);
+                return {
+                    upcoming: Array.isArray(parsed.upcoming) ? parsed.upcoming : [],
+                    completed: Array.isArray(parsed.completed) ? parsed.completed : []
+                };
+            } catch (err) {
+                return { upcoming: [], completed: [] };
+            }
+        }
+
+        function shortVenue(venue) {
+            var text = String(venue || '');
+            if (!text) return '';
+            var parts = text.split(',');
+            if (parts.length <= 2) return text;
+            return parts.slice(0, 2).join(',').trim();
+        }
+
+        function updateHeroNext() {
+            var titleEl = document.getElementById('cme-hero-next-title');
+            var metaEl = document.getElementById('cme-hero-next-meta');
+            var labelEl = document.querySelector('#cme-hero-next .cme-hero__feature-label');
+            if (!titleEl || !metaEl) return;
+
+            var list = Array.isArray(data.upcoming) ? data.upcoming.slice() : [];
+            list.sort(function (a, b) {
+                return String(a.date || '').localeCompare(String(b.date || ''));
+            });
+            var next = list[0];
+
+            if (!next) {
+                if (labelEl) {
+                    labelEl.innerHTML = '<i class="fas fa-folder-open" aria-hidden="true"></i> Archive';
+                }
+                titleEl.textContent = 'Completed CME flyers';
+                metaEl.innerHTML = '<span><i class="fas fa-info-circle" aria-hidden="true"></i> Switch to Completed CME to browse past sessions</span>';
+                return;
+            }
+
+            if (labelEl) {
+                labelEl.innerHTML = '<i class="fas fa-calendar-check" aria-hidden="true"></i> Next session';
+            }
+            titleEl.textContent = next.title || 'Upcoming CME';
+            var dateLine = next.dateLabel || next.date || '';
+            if (next.time) dateLine = dateLine ? dateLine + ' · ' + next.time : next.time;
+            var venueLine = shortVenue(next.venue || '');
+            metaEl.innerHTML =
+                (dateLine
+                    ? '<span><i class="fas fa-calendar-alt" aria-hidden="true"></i> ' + escapeHtml(dateLine) + '</span>'
+                    : '') +
+                (venueLine
+                    ? '<span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + escapeHtml(venueLine) + '</span>'
+                    : '');
+        }
+
+        function applyData(json) {
+            data.upcoming = Array.isArray(json.upcoming) ? json.upcoming : [];
+            data.completed = Array.isArray(json.completed) ? json.completed : [];
+            renderList('upcoming');
+            renderList('completed');
+            updateHeroNext();
+            var hash = (location.hash || '').replace('#', '');
+            setTab(hash === 'completed' ? 'completed' : 'upcoming');
+        }
+
+        document.querySelectorAll('.cme-tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                setTab(btn.getAttribute('data-tab'));
+            });
+        });
+
+        // Prefer live JSON when served over HTTP; fall back to embedded data for file:// opens.
+        fetch('cme-flyers.json?v=' + Date.now())
+            .then(function (res) {
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                return res.json();
+            })
+            .then(function (json) {
+                applyData(json);
+            })
+            .catch(function () {
+                var embedded = readEmbeddedData();
+                applyData(embedded);
+                if (!embedded.upcoming.length && !embedded.completed.length) {
+                    countEl.textContent = 'Unable to load CME list';
+                }
+            });
+    })();
+    </script>
+</body>
+</html>

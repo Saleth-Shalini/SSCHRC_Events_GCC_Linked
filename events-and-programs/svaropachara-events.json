@@ -1,0 +1,82 @@
+{
+  "upcoming": [],
+  "completed": [
+    {
+      "id": "svaropachara-2026-07-11",
+      "title": "Svaropachara — Bhakthi Sangeetha Concert",
+      "date": "2026-07-11",
+      "dateLabel": "Saturday, 11th July 2026",
+      "time": "5:30 pm to 7:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_July_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    },
+    {
+      "id": "svaropachara-2026-06-20",
+      "title": "Svaropachara — Karnataka Classical Music Concert",
+      "date": "2026-06-20",
+      "dateLabel": "Saturday, 20th June 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_June_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "World Music Day Celebrations"
+    },
+    {
+      "id": "svaropachara-2026-05-16",
+      "title": "Svaropachara — Karnataka Sangeetha Concert (75th Episode)",
+      "date": "2026-05-16",
+      "dateLabel": "Saturday, 16th May 2026",
+      "time": "5:00 pm to 7:00 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_May_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series — 75th Episode"
+    },
+    {
+      "id": "svaropachara-2026-04-04",
+      "title": "Svaropachara — Karnataka Sangeetha Flute Concert",
+      "date": "2026-04-04",
+      "dateLabel": "Saturday, 4th April 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_April_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    },
+    {
+      "id": "svaropachara-2026-03-07",
+      "title": "Svaropachara — Women’s Day Special (72nd Episode)",
+      "date": "2026-03-07",
+      "dateLabel": "Saturday, 7th March 2026",
+      "time": "4:00 pm to 7:00 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_March_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Book launch & Karnataka Classical Music Concert — 72nd Episode"
+    },
+    {
+      "id": "svaropachara-2026-02-07",
+      "title": "Svaropachara — Hindustani Classical Concert",
+      "date": "2026-02-07",
+      "dateLabel": "Saturday, 7th February 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_February_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    },
+    {
+      "id": "svaropachara-2026-01-10",
+      "title": "Svaropachara — Karnataka Classical Vocal Concert",
+      "date": "2026-01-10",
+      "dateLabel": "Saturday, 10th January 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_January_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    }
+  ]
+}

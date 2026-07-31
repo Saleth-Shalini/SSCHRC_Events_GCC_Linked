@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upcoming and completed Svaropachara music therapy sessions at Sri Shankara Cancer Hospital & Research Centre.">
+    <link rel="canonical" href="https://srishankaracancerhospital.org/events-and-programs/svaropachara" />
+    <title>Svaropachara Music Therapy | Sri Shankara Cancer Hospital</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hospital-green': '#2E8B57',
+                        'hospital-orange': '#FF4500',
+                        'cme-ink': '#0B1F33',
+                        'cme-slate': '#3D5568',
+                        'cme-blue': '#C45C26'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../chatbox.css">
+
+    <style>
+        :root {
+            --cme-ink: #0B1F33;
+            --cme-slate: #3D5568;
+            --cme-blue: #C45C26;
+            --cme-mist: #F4F7FA;
+            --cme-line: #D9E4EF;
+        }
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--cme-ink);
+            background:
+                radial-gradient(ellipse 70% 45% at 8% 0%, rgba(196,92,38,0.10), transparent 55%),
+                linear-gradient(180deg, #FFF9F5, #F5EDE6);
+        }
+        .cme-page { padding: clamp(1.5rem, 4vw, 3rem) 0 3.5rem; }
+        .cme-back {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: var(--cme-blue); font-weight: 600; font-size: 0.9rem;
+            text-decoration: none; margin-bottom: 1.25rem;
+        }
+        .cme-back:hover { color: var(--cme-ink); }
+        .cme-hero-panel {
+            background: #fff;
+            border: 1px solid var(--cme-line);
+            border-radius: 1.35rem;
+            padding: clamp(1.25rem, 3vw, 2rem);
+            box-shadow: 0 18px 40px rgba(11,31,51,0.06);
+            margin-bottom: 1.5rem;
+        }
+        .cme-kicker {
+            margin: 0 0 0.45rem;
+            font-size: 0.78rem; font-weight: 700;
+            letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--cme-blue);
+        }
+        .cme-title {
+            margin: 0 0 0.65rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            line-height: 1.05; font-weight: 700;
+        }
+        .cme-lead {
+            margin: 0;
+            max-width: 46rem;
+            color: var(--cme-slate);
+            font-size: 1.05rem; line-height: 1.65;
+        }
+        .cme-toolbar {
+            display: flex; flex-wrap: wrap; gap: 0.75rem;
+            align-items: center; justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+        .cme-tabs {
+            display: inline-flex; gap: 0.35rem; padding: 0.3rem;
+            background: #fff; border: 1px solid var(--cme-line);
+            border-radius: 999px;
+        }
+        .cme-tab {
+            border: 0; background: transparent; color: var(--cme-slate);
+            font: inherit; font-weight: 700; font-size: 0.92rem;
+            padding: 0.65rem 1.1rem; border-radius: 999px; cursor: pointer;
+        }
+        .cme-tab.is-active {
+            background: linear-gradient(135deg, #c45c26, #9a3412);
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(154, 52, 18, 0.22);
+        }
+        .cme-upload-link {
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            padding: 0.65rem 1.05rem; border-radius: 999px;
+            background: #fff; border: 1.5px solid color-mix(in srgb, #c45c26 28%, white);
+            color: #9a3412; font-weight: 700; text-decoration: none;
+        }
+        .cme-upload-link:hover { border-color: #c45c26; color: #7c2d12; background: #fff8f1; }
+
+        .cme-panel[hidden] { display: none !important; }
+        .cme-grid {
+            display: grid; gap: 1.35rem;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 700px) {
+            .cme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1080px) {
+            .cme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        /* ——— Upcoming cards (unchanged structure) ——— */
+        .flyer-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid rgba(154, 52, 18, 0.1);
+            border-radius: 1.15rem;
+            box-shadow: 0 14px 34px rgba(92, 40, 12, 0.08);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+            min-height: 100%;
+        }
+        .flyer-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 26px 50px rgba(92, 40, 12, 0.14);
+        }
+        .flyer-card__media {
+            position: relative;
+            aspect-ratio: 3 / 3.55;
+            overflow: hidden;
+            background: linear-gradient(145deg, #7c2d12, #c45c26 55%, #ea580c);
+        }
+        .flyer-card__media img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center;
+            display: block; transition: transform 0.5s ease;
+        }
+        .flyer-card:hover .flyer-card__media img { transform: scale(1.04); }
+        .flyer-card__media-fallback {
+            width: 100%; height: 100%;
+            display: grid; place-items: center;
+            color: rgba(255, 255, 255, 0.75); font-size: 2.4rem;
+        }
+        .flyer-card__media-shade {
+            position: absolute; inset: auto 0 0 0; height: 42%;
+            background: linear-gradient(180deg, transparent, rgba(40, 16, 6, 0.72));
+            pointer-events: none;
+        }
+        .flyer-card__badge {
+            position: absolute; top: 0.9rem; left: 0.9rem; z-index: 2;
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            background: rgba(255, 255, 255, 0.92); color: #9a3412;
+            font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em;
+            text-transform: uppercase; padding: 0.4rem 0.7rem; border-radius: 999px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+        .flyer-card__datechip {
+            position: absolute; top: 0.9rem; right: 0.9rem; z-index: 2;
+            display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+            min-width: 3.6rem; padding: 0.45rem 0.4rem; border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.95); color: #7c2d12;
+            text-align: center; line-height: 1.1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
+        }
+        .flyer-card__datechip strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem; font-weight: 700;
+        }
+        .flyer-card__datechip span {
+            font-size: 0.65rem; font-weight: 800;
+            letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;
+        }
+        .flyer-card__body {
+            display: flex; flex-direction: column; flex: 1; gap: 0.85rem;
+            padding: 1.15rem 1.2rem 1.25rem;
+            background: linear-gradient(180deg, #fffaf5 0%, #fff 48%);
+        }
+        .flyer-card__title {
+            margin: 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+            font-weight: 700; line-height: 1.2; color: #4a1d0a;
+        }
+        .flyer-card__meta {
+            display: grid; gap: 0.45rem; margin: 0; padding: 0; list-style: none;
+        }
+        .flyer-card__meta li {
+            display: flex; align-items: flex-start; gap: 0.55rem;
+            color: #5c4a3d; font-size: 0.9rem; line-height: 1.45; font-weight: 600;
+        }
+        .flyer-card__meta i {
+            margin-top: 0.18rem; color: #c45c26;
+            width: 0.95rem; text-align: center; flex-shrink: 0;
+        }
+        .flyer-card__assoc {
+            margin: 0; color: #8a6a52; font-size: 0.84rem;
+            line-height: 1.45; font-style: italic;
+        }
+        .flyer-card__actions {
+            display: flex; flex-wrap: wrap; gap: 0.55rem;
+            margin-top: auto; padding-top: 0.35rem;
+        }
+        .flyer-btn {
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            min-height: 2.55rem; padding: 0.55rem 1.05rem; border-radius: 999px;
+            font-weight: 700; font-size: 0.88rem; text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .flyer-btn--primary {
+            background: linear-gradient(135deg, #c45c26, #9a3412);
+            color: #fff; box-shadow: 0 10px 20px rgba(154, 52, 18, 0.2);
+        }
+        .flyer-btn--primary:hover {
+            color: #fff; transform: translateY(-1px);
+            background: linear-gradient(135deg, #d97706, #7c2d12);
+        }
+
+        /* ——— Completed Sessions showcase (Concept B) ——— */
+        .sessions-showcase {
+            position: relative;
+            margin: 0 -0.35rem;
+            padding: 1.15rem 0.35rem 0.35rem;
+            border-radius: 1.5rem;
+        }
+        .sessions-showcase::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background:
+                radial-gradient(ellipse 55% 40% at 0% 0%, rgba(196, 92, 38, 0.09), transparent 60%),
+                radial-gradient(ellipse 45% 35% at 100% 10%, rgba(154, 52, 18, 0.06), transparent 55%),
+                linear-gradient(180deg, rgba(255, 252, 248, 0.95), rgba(245, 237, 230, 0.55));
+            pointer-events: none;
+            z-index: 0;
+        }
+        .sessions-showcase::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0.35;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c45c26' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        .sessions-showcase__grid {
+            position: relative;
+            z-index: 1;
+            gap: 1.75rem;
+        }
+        @media (min-width: 700px) {
+            .sessions-showcase__grid { gap: 1.85rem; }
+        }
+        @media (min-width: 1080px) {
+            .sessions-showcase__grid { gap: 2rem; }
+        }
+
+        .cme-page[data-view="completed"] .cme-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(154, 52, 18, 0.12);
+            color: #7c2d12;
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            box-shadow: 0 6px 16px rgba(92, 40, 12, 0.05);
+        }
+
+        .event-card {
+            --ec-accent: #c45c26;
+            --ec-deep: #7c2d12;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-height: 100%;
+            overflow: visible;
+            border-radius: 1.35rem;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.9) inset,
+                0 18px 40px rgba(92, 40, 12, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(18px);
+            transition:
+                transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.45s ease,
+                opacity 0.45s ease;
+        }
+        .event-card.is-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: calc(var(--stagger, 0) * 70ms);
+        }
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 28px 56px rgba(92, 40, 12, 0.14);
+        }
+        .event-card.is-in:hover {
+            transform: translateY(-8px);
+        }
+
+        .event-card__media {
+            position: relative;
+            margin: 0.7rem 0.7rem 0;
+            aspect-ratio: 16 / 11;
+            overflow: hidden;
+            border-radius: 1rem;
+            background: linear-gradient(145deg, #7c2d12, #c45c26);
+            box-shadow: 0 10px 28px rgba(92, 40, 12, 0.12);
+        }
+        .event-card__media img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center;
+            display: block;
+            transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .event-card:hover .event-card__media img {
+            transform: scale(1.06);
+        }
+        .event-card__media-fallback {
+            width: 100%; height: 100%;
+            display: grid; place-items: center;
+            color: rgba(255,255,255,0.8); font-size: 2rem;
+        }
+        .event-card__media-shade {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(180deg, rgba(20,12,8,0.12) 0%, transparent 38%),
+                linear-gradient(180deg, transparent 55%, rgba(40,16,6,0.45) 100%);
+            pointer-events: none;
+        }
+
+        .event-card__status {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.38rem 0.72rem;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(135deg, rgba(55, 65, 81, 0.88), rgba(28, 25, 23, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(8px);
+        }
+        .event-card__status i {
+            font-size: 0.62rem;
+            color: #86efac;
+        }
+
+        .event-card__date {
+            position: absolute;
+            right: 0.85rem;
+            bottom: 0;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 3.85rem;
+            padding: 0.55rem 0.5rem 0.5rem;
+            border-radius: 0.95rem;
+            background: linear-gradient(180deg, #fff, #fff8f3);
+            color: var(--ec-deep);
+            text-align: center;
+            line-height: 1;
+            border: 1px solid rgba(196, 92, 38, 0.14);
+            box-shadow: 0 14px 28px rgba(92, 40, 12, 0.16);
+            transform: translateY(50%);
+        }
+        .event-card__date span {
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ec-accent);
+            margin-bottom: 0.2rem;
+        }
+        .event-card__date strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--ec-deep);
+        }
+
+        .event-card__body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 0.7rem;
+            padding: 1.85rem 1.25rem 1.3rem;
+        }
+        .event-card__category {
+            margin: -0.15rem 0 0;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ec-accent);
+        }
+        .event-card__title {
+            margin: 0;
+            padding-right: 3.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.4rem, 2.3vw, 1.75rem);
+            font-weight: 700;
+            line-height: 1.18;
+            color: #3b1a0c;
+        }
+        .event-card__facts {
+            display: grid;
+            gap: 0.55rem;
+            margin: 0.15rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .event-card__facts li {
+            display: grid;
+            grid-template-columns: 1.1rem 1fr;
+            gap: 0.55rem;
+            align-items: start;
+            color: #5c4a3d;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+        .event-card__facts i {
+            margin-top: 0.2rem;
+            color: var(--ec-accent);
+            font-size: 0.82rem;
+            text-align: center;
+        }
+        .event-card__desc {
+            margin: 0;
+            color: #8a6a52;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .event-card__cta {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            align-self: stretch;
+            margin-top: auto;
+            min-height: 2.75rem;
+            padding: 0.65rem 1.2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #fff;
+            background: linear-gradient(135deg, #c45c26, #9a3412);
+            box-shadow: 0 12px 24px rgba(154, 52, 18, 0.22);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, gap 0.25s ease;
+        }
+        .event-card__cta::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--rx, 50%) var(--ry, 50%), rgba(255,255,255,0.35), transparent 45%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+        .event-card__cta:hover {
+            color: #fff;
+            transform: translateY(-2px);
+            gap: 0.75rem;
+            box-shadow: 0 16px 30px rgba(154, 52, 18, 0.28);
+        }
+        .event-card__cta:hover::after { opacity: 1; }
+        .event-card__cta .cta-arrow {
+            transition: transform 0.25s ease;
+        }
+        .event-card__cta:hover .cta-arrow {
+            transform: translateX(3px);
+        }
+
+        .cme-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: #fff; border: 1px dashed color-mix(in srgb, #c45c26 28%, white);
+            border-radius: 1.15rem; padding: 2.5rem 1.25rem;
+            color: var(--cme-slate);
+        }
+        .cme-empty i { font-size: 1.6rem; color: var(--cme-blue); margin-bottom: 0.6rem; }
+        .cme-empty h3 { margin: 0 0 0.35rem; color: var(--cme-ink); font-size: 1.2rem; }
+        .cme-empty p { margin: 0 auto; max-width: 34rem; line-height: 1.55; }
+
+        .cme-count {
+            margin: 0 0 0.85rem;
+            color: var(--cme-slate);
+            font-size: 0.92rem; font-weight: 600;
+        }
+
+        @media (max-width: 639px) {
+            .event-card__title { padding-right: 0; }
+            .event-card__media { aspect-ratio: 16 / 12; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .event-card,
+            .event-card.is-in,
+            .event-card:hover,
+            .event-card__media img,
+            .event-card__cta {
+                transition: none !important;
+                animation: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EM0LW3CT3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9EM0LW3CT3');
+    </script>
+</head>
+<body>
+    <header id="dynamic-header"></header>
+    <script src="../header.js"></script>
+
+    <main class="cme-page">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="index.html" class="cme-back">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                Back to Events &amp; Programs
+            </a>
+
+            <section class="cme-hero-panel" aria-labelledby="cme-heading">
+                <p class="cme-kicker">Music Therapy</p>
+                <h1 id="cme-heading" class="cme-title">Svaropachara</h1>
+                <p class="cme-lead">
+                    Browse upcoming Svaropachara music therapy sessions and revisit completed program flyers from Sri Shankara Cancer Hospital &amp; Research Centre.
+                </p>
+            </section>
+
+            <div class="cme-toolbar">
+                <div class="cme-tabs" role="tablist" aria-label="Svaropachara categories">
+                    <button type="button" class="cme-tab is-active" role="tab" aria-selected="true" data-tab="upcoming" id="tab-upcoming">
+                        Upcoming Sessions
+                    </button>
+                    <button type="button" class="cme-tab" role="tab" aria-selected="false" data-tab="completed" id="tab-completed">
+                        Completed Sessions
+                    </button>
+                </div>
+                <a class="cme-upload-link" href="svaropachara-upload.html">
+                    <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                    Upload flyer
+                </a>
+            </div>
+
+            <p class="cme-count" id="cme-count" aria-live="polite"></p>
+
+            <section id="panel-upcoming" class="cme-panel" role="tabpanel" aria-labelledby="tab-upcoming">
+                <div class="cme-grid" id="grid-upcoming"></div>
+            </section>
+
+            <section id="panel-completed" class="cme-panel sessions-showcase" role="tabpanel" aria-labelledby="tab-completed" hidden>
+                <div class="cme-grid sessions-showcase__grid" id="grid-completed"></div>
+            </section>
+        </div>
+    </main>
+
+    <script type="application/json" id="svaropachara-events-data">
+{
+  "upcoming": [],
+  "completed": [
+    {
+      "id": "svaropachara-2026-07-11",
+      "title": "Svaropachara — Bhakthi Sangeetha Concert",
+      "date": "2026-07-11",
+      "dateLabel": "Saturday, 11th July 2026",
+      "time": "5:30 pm to 7:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_July_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    },
+    {
+      "id": "svaropachara-2026-06-20",
+      "title": "Svaropachara — Karnataka Classical Music Concert",
+      "date": "2026-06-20",
+      "dateLabel": "Saturday, 20th June 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_June_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "World Music Day Celebrations"
+    },
+    {
+      "id": "svaropachara-2026-05-16",
+      "title": "Svaropachara — Karnataka Sangeetha Concert (75th Episode)",
+      "date": "2026-05-16",
+      "dateLabel": "Saturday, 16th May 2026",
+      "time": "5:00 pm to 7:00 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_May_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series — 75th Episode"
+    },
+    {
+      "id": "svaropachara-2026-04-04",
+      "title": "Svaropachara — Karnataka Sangeetha Flute Concert",
+      "date": "2026-04-04",
+      "dateLabel": "Saturday, 4th April 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_April_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    },
+    {
+      "id": "svaropachara-2026-03-07",
+      "title": "Svaropachara — Women’s Day Special (72nd Episode)",
+      "date": "2026-03-07",
+      "dateLabel": "Saturday, 7th March 2026",
+      "time": "4:00 pm to 7:00 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_March_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Book launch & Karnataka Classical Music Concert — 72nd Episode"
+    },
+    {
+      "id": "svaropachara-2026-02-07",
+      "title": "Svaropachara — Hindustani Classical Concert",
+      "date": "2026-02-07",
+      "dateLabel": "Saturday, 7th February 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_February_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    },
+    {
+      "id": "svaropachara-2026-01-10",
+      "title": "Svaropachara — Karnataka Classical Vocal Concert",
+      "date": "2026-01-10",
+      "dateLabel": "Saturday, 10th January 2026",
+      "time": "4:30 pm to 6:30 pm",
+      "venue": "Sri Sri Abhinava Vidyatheertha Mahaswamiji Auditorium (2nd Floor), Sri Shankara Cancer Hospital & Research Centre, Basavanagudi, Bengaluru",
+      "flyer": "assets/svaropachara/flyers/completed/Svaropachara_January_2026.jpg",
+      "organizedBy": "Svarakshema Foundation, Sri Shankara Cancer Foundation & Anoor Ananthakrishna Sharma Foundation for Music",
+      "association": "Therapeutic Music Concert Series"
+    }
+  ]
+}
+    </script>
+
+    <footer id="hospital-footer"></footer>
+
+    <button id="chat-fab3" class="pulse3" aria-label="Open chat support">
+        <svg viewBox="0 0 24 24">
+            <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2M6,9V7H18V9H6M14,11V13H6V11H14M16,15H6V17H16V15Z"/>
+        </svg>
+    </button>
+
+    <div id="chatbox-container3">
+        <div id="chatbox-header3">
+            <div class="header-content3">
+                <div class="avatar3">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                    </svg>
+                </div>
+            </div>
+            <button id="chatbox-close3" aria-label="Close chatbox">&times;</button>
+        </div>
+        <div id="chatbox-body3">
+            <div id="chatbox-messages3" style="display:none;"></div>
+            <div id="chatbox-faq-buttons3" style="display:none;"></div>
+        </div>
+        <form id="chatbox-form3" style="display:none;">
+            <div id="chatbox-input-area3">
+                <input type="text" id="chatbox-input3" placeholder="Type your message here..." autocomplete="off" required />
+                <button type="submit" id="chatbox-send-btn3">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../footer.js"></script>
+    <script src="../chatbox.js"></script>
+    <script>
+    (function () {
+        var data = { upcoming: [], completed: [] };
+        var countEl = document.getElementById('cme-count');
+
+        function escapeHtml(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function dateChipHtml(item) {
+            var raw = item.date || '';
+            var parts = raw.split('-');
+            if (parts.length < 3) return '';
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var day = String(parseInt(parts[2], 10));
+            var mon = months[parseInt(parts[1], 10) - 1] || '';
+            return '<div class="flyer-card__datechip" aria-hidden="true"><strong>' + escapeHtml(day) + '</strong><span>' + escapeHtml(mon) + '</span></div>';
+        }
+
+        function floatingDateHtml(item) {
+            var raw = item.date || '';
+            var parts = raw.split('-');
+            if (parts.length < 3) return '';
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var day = String(parseInt(parts[2], 10));
+            var mon = months[parseInt(parts[1], 10) - 1] || '';
+            return (
+                '<div class="event-card__date" aria-hidden="true">' +
+                    '<span>' + escapeHtml(mon) + '</span>' +
+                    '<strong>' + escapeHtml(day) + '</strong>' +
+                '</div>'
+            );
+        }
+
+        function shortVenue(venue) {
+            var text = String(venue || '');
+            if (!text) return '';
+            var parts = text.split(',');
+            if (parts.length <= 2) return text;
+            return parts.slice(0, 2).join(',').trim();
+        }
+
+        function observeEventCards(root) {
+            var cards = (root || document).querySelectorAll('.event-card:not(.is-in)');
+            if (!cards.length) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                cards.forEach(function (card) { card.classList.add('is-in'); });
+                return;
+            }
+            if (!('IntersectionObserver' in window)) {
+                cards.forEach(function (card) { card.classList.add('is-in'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-in');
+                    io.unobserve(entry.target);
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+            cards.forEach(function (card) { io.observe(card); });
+        }
+
+        function bindCtaRipple(root) {
+            (root || document).querySelectorAll('.event-card__cta').forEach(function (btn) {
+                if (btn.dataset.rippleBound) return;
+                btn.dataset.rippleBound = '1';
+                btn.addEventListener('pointermove', function (e) {
+                    var rect = btn.getBoundingClientRect();
+                    btn.style.setProperty('--rx', ((e.clientX - rect.left) / rect.width) * 100 + '%');
+                    btn.style.setProperty('--ry', ((e.clientY - rect.top) / rect.height) * 100 + '%');
+                });
+            });
+        }
+
+        function completedCardHtml(item, index) {
+            var flyer = item.flyer || '';
+            var dateLine = escapeHtml(item.dateLabel || item.date || '');
+            if (item.time) {
+                dateLine = dateLine
+                    ? dateLine + ' · ' + escapeHtml(item.time)
+                    : escapeHtml(item.time);
+            }
+            var category = 'Music Therapy';
+            var description = item.association || '';
+            var media = flyer
+                ? '<img src="' + escapeHtml(flyer) + '" alt="' + escapeHtml((item.title || 'Svaropachara') + ' flyer') + '" loading="lazy">'
+                : '<div class="event-card__media-fallback" aria-hidden="true"><i class="fas fa-music"></i></div>';
+
+            var facts = '<ul class="event-card__facts">';
+            if (dateLine) {
+                facts += '<li><i class="fas fa-calendar-alt" aria-hidden="true"></i><span>' + dateLine + '</span></li>';
+            }
+            if (item.venue) {
+                facts += '<li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>' + escapeHtml(shortVenue(item.venue)) + '</span></li>';
+            }
+            facts += '</ul>';
+
+            return (
+                '<article class="event-card" style="--stagger:' + (index % 6) + '">' +
+                    '<div class="event-card__media">' +
+                        media +
+                        '<div class="event-card__media-shade" aria-hidden="true"></div>' +
+                        '<span class="event-card__status"><i class="fas fa-check" aria-hidden="true"></i> Completed</span>' +
+                        floatingDateHtml(item) +
+                    '</div>' +
+                    '<div class="event-card__body">' +
+                        '<h2 class="event-card__title">' + escapeHtml(item.title || 'Svaropachara') + '</h2>' +
+                        '<p class="event-card__category">' + escapeHtml(category) + '</p>' +
+                        facts +
+                        (description
+                            ? '<p class="event-card__desc">' + escapeHtml(description) + '</p>'
+                            : '') +
+                        (flyer
+                            ? '<a class="event-card__cta" href="' + escapeHtml(flyer) + '" target="_blank" rel="noopener noreferrer">' +
+                                '<i class="fas fa-eye" aria-hidden="true"></i>' +
+                                '<span>View flyer</span>' +
+                                '<i class="fas fa-arrow-right cta-arrow" aria-hidden="true"></i>' +
+                              '</a>'
+                            : '') +
+                    '</div>' +
+                '</article>'
+            );
+        }
+
+        function cardHtml(item, type, index) {
+            if (type === 'completed') {
+                return completedCardHtml(item, index || 0);
+            }
+
+            var flyer = item.flyer || '';
+            var dateLine = escapeHtml(item.dateLabel || item.date || '');
+            if (item.time) {
+                dateLine = dateLine
+                    ? dateLine + ' · ' + escapeHtml(item.time)
+                    : escapeHtml(item.time);
+            }
+
+            var media = flyer
+                ? '<img src="' + escapeHtml(flyer) + '" alt="' + escapeHtml((item.title || 'Svaropachara') + ' flyer') + '" loading="lazy">'
+                : '<div class="flyer-card__media-fallback" aria-hidden="true"><i class="fas fa-music"></i></div>';
+
+            var meta = '<ul class="flyer-card__meta">';
+            if (dateLine) {
+                meta += '<li><i class="fas fa-calendar-alt" aria-hidden="true"></i><span>' + dateLine + '</span></li>';
+            }
+            if (item.venue) {
+                meta += '<li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>' + escapeHtml(shortVenue(item.venue)) + '</span></li>';
+            }
+            meta += '</ul>';
+
+            return (
+                '<article class="flyer-card">' +
+                    '<div class="flyer-card__media">' +
+                        media +
+                        '<div class="flyer-card__media-shade" aria-hidden="true"></div>' +
+                        '<span class="flyer-card__badge">Upcoming</span>' +
+                        dateChipHtml(item) +
+                    '</div>' +
+                    '<div class="flyer-card__body">' +
+                        '<h2 class="flyer-card__title">' + escapeHtml(item.title || 'Svaropachara') + '</h2>' +
+                        meta +
+                        (item.association
+                            ? '<p class="flyer-card__assoc">' + escapeHtml(item.association) + '</p>'
+                            : '') +
+                        '<div class="flyer-card__actions">' +
+                            (flyer
+                                ? '<a class="flyer-btn flyer-btn--primary" href="' + escapeHtml(flyer) + '" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> View flyer</a>'
+                                : '') +
+                        '</div>' +
+                    '</div>' +
+                '</article>'
+            );
+        }
+
+        function emptyHtml(type) {
+            var isUpcoming = type === 'upcoming';
+            return (
+                '<div class="cme-empty">' +
+                    '<i class="fas ' + (isUpcoming ? 'fa-calendar-plus' : 'fa-folder-open') + '" aria-hidden="true"></i>' +
+                    '<h3>No ' + type + ' Svaropachara sessions yet</h3>' +
+                    '<p>' + (isUpcoming
+                        ? 'Upload a flyer using the Upload flyer button to list your next music therapy session here.'
+                        : 'Completed Svaropachara music therapy flyers will appear here after you upload them under Completed Events.') +
+                    '</p>' +
+                '</div>'
+            );
+        }
+
+        function renderList(type) {
+            var grid = document.getElementById('grid-' + type);
+            var list = Array.isArray(data[type]) ? data[type].slice() : [];
+            list.sort(function (a, b) {
+                var cmp = String(a.date || '').localeCompare(String(b.date || ''));
+                return type === 'upcoming' ? cmp : -cmp;
+            });
+            if (!list.length) {
+                grid.innerHTML = emptyHtml(type);
+            } else {
+                grid.innerHTML = list.map(function (item, index) { return cardHtml(item, type, index); }).join('');
+            }
+            if (type === 'completed') {
+                observeEventCards(grid);
+                bindCtaRipple(grid);
+            }
+            return list.length;
+        }
+
+        function setTab(type) {
+            var upcoming = type === 'upcoming';
+            var page = document.querySelector('.cme-page');
+            if (page) page.setAttribute('data-view', type);
+            document.querySelectorAll('.cme-tab').forEach(function (btn) {
+                var active = btn.getAttribute('data-tab') === type;
+                btn.classList.toggle('is-active', active);
+                btn.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            document.getElementById('panel-upcoming').hidden = !upcoming;
+            document.getElementById('panel-completed').hidden = upcoming;
+            var count = upcoming ? data.upcoming.length : data.completed.length;
+            countEl.textContent = count + ' ' + (upcoming ? 'upcoming' : 'completed') + ' session' + (count === 1 ? '' : 's');
+            if (!upcoming) {
+                observeEventCards(document.getElementById('grid-completed'));
+            }
+            if (history.replaceState) {
+                history.replaceState(null, '', '#' + type);
+            } else {
+                location.hash = type;
+            }
+        }
+
+        function readEmbeddedData() {
+            var el = document.getElementById('svaropachara-events-data');
+            if (!el) return { upcoming: [], completed: [] };
+            try {
+                var parsed = JSON.parse(el.textContent);
+                return {
+                    upcoming: Array.isArray(parsed.upcoming) ? parsed.upcoming : [],
+                    completed: Array.isArray(parsed.completed) ? parsed.completed : []
+                };
+            } catch (err) {
+                return { upcoming: [], completed: [] };
+            }
+        }
+
+        function applyData(json) {
+            data.upcoming = Array.isArray(json.upcoming) ? json.upcoming : [];
+            data.completed = Array.isArray(json.completed) ? json.completed : [];
+            renderList('upcoming');
+            renderList('completed');
+            var hash = (location.hash || '').replace('#', '');
+            setTab(hash === 'completed' ? 'completed' : 'upcoming');
+        }
+
+        document.querySelectorAll('.cme-tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                setTab(btn.getAttribute('data-tab'));
+            });
+        });
+
+        fetch('svaropachara-events.json?v=' + Date.now())
+            .then(function (res) {
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                return res.json();
+            })
+            .then(function (json) {
+                applyData(json);
+            })
+            .catch(function () {
+                var embedded = readEmbeddedData();
+                applyData(embedded);
+                if (!embedded.upcoming.length && !embedded.completed.length) {
+                    countEl.textContent = 'Unable to load Svaropachara sessions';
+                }
+            });
+    })();
+    </script>
+</body>
+</html>

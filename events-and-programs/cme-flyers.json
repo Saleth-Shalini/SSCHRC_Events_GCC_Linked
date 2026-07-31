@@ -1,0 +1,28 @@
+{
+  "upcoming": [
+    {
+      "id": "cme-2026-07-11-complicon-4",
+      "title": "Head & Neck COMPLICON-4",
+      "date": "2026-07-11",
+      "dateLabel": "11th July 2026",
+      "time": "",
+      "venue": "Sri Shankara Cancer Hospital & Research Centre, Bengaluru",
+      "flyer": "assets/cme/flyers/upcoming/Complicon_4.png",
+      "brochure": "assets/cme/flyers/upcoming/Complicon_4_Brochure.pdf",
+      "organizedBy": "Sri Shankara Cancer Hospital & Research Centre, Bengaluru",
+      "association": "Head & Neck Oncology Conference — Perioperative Complications Following Major Head & Neck Surgery"
+    },
+    {
+      "id": "cme-2026-08-07-chitradurga",
+      "title": "CME — Chitradurga",
+      "date": "2026-08-07",
+      "dateLabel": "Friday, 7th August 2026",
+      "time": "08:00pm Onwards",
+      "venue": "Aishwarya Fort Hotel, Near RTO Office, Turuvanur Road, Chitradurga - 577501",
+      "flyer": "assets/cme/flyers/upcoming/CME_7th_August_Chitradurga.png",
+      "organizedBy": "Sri Shankara Cancer Hospital & Research Centre, Bangalore",
+      "association": "Indian Academy of Paediatrics, Chitradurga (IAP)"
+    }
+  ],
+  "completed": []
+}

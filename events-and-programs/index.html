@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="8th International Conference of the Global Cancer Consortium, 29–30 January 2027 at Sri Shankara Cancer Hospital & Research Centre, Bengaluru.">
+    <meta name="description" content="Explore CME programs, conferences, Tumor Board meetings, and Svaropachara music therapy sessions at Sri Shankara Cancer Hospital & Research Centre.">
     <link rel="canonical" href="https://srishankaracancerhospital.org/events-and-programs" />
-    <title>Events & Conference Programs | Sri Shankara Cancer Hospital</title>
+    <title>Events & Programs | Sri Shankara Cancer Hospital</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -29,31 +29,385 @@
 
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .program-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        .events-stage {
+            position: relative;
+            background-color: #f0f4f2;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(46, 139, 87, 0.09) 1px, transparent 0);
+            background-size: 28px 28px;
         }
-        .program-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15);
+
+        .ticket-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 1.35rem;
         }
-        .program-theme {
-            border-left: 3px solid #FF4500;
-            background: #fff7f0;
+
+        @media (min-width: 768px) {
+            .ticket-grid {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: stretch;
+                gap: 1.4rem;
+            }
         }
-        .program-meta {
+
+        @media (min-width: 1100px) {
+            .ticket-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.3rem;
+            }
+        }
+
+        .ticket-card {
+            --accent: #134e4a;
+            --accent-mid: #1a6b63;
+            --accent-deep: #0f3f3c;
+            --accent-line: #99f6e4;
+            --stripe: rgba(19, 78, 74, 0.04);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+            border-radius: 1.05rem;
+            background: #fff;
+            border: 1px solid rgba(21, 37, 28, 0.07);
+            box-shadow: 0 12px 32px rgba(21, 37, 28, 0.07);
+            transition:
+                transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s ease;
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 22px 48px rgba(21, 37, 28, 0.12);
+        }
+
+        .ticket-card.cme {
+            --accent: #14532d;
+            --accent-mid: #1f7a4d;
+            --accent-deep: #0f3d24;
+            --accent-line: #86efac;
+            --stripe: rgba(20, 83, 45, 0.04);
+        }
+        .ticket-card.conference {
+            --accent: #115e59;
+            --accent-mid: #0f766e;
+            --accent-deep: #0a3d3a;
+            --accent-line: #5eead4;
+            --stripe: rgba(15, 118, 110, 0.04);
+        }
+        .ticket-card.tumor {
+            --accent: #134e4a;
+            --accent-mid: #1a6b63;
+            --accent-deep: #0f3f3c;
+            --accent-line: #99f6e4;
+            --stripe: rgba(19, 78, 74, 0.04);
+        }
+        .ticket-card.svaropachara {
+            --accent: #9a3412;
+            --accent-mid: #c2410c;
+            --accent-deep: #7c2d12;
+            --accent-line: #fdba74;
+            --stripe: rgba(154, 52, 18, 0.045);
+        }
+
+        .ticket-head {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin: 0;
+            padding: 1.4rem 1.35rem 1.3rem;
+            color: #fff;
+            background: linear-gradient(120deg, var(--accent-deep) 0%, var(--accent) 48%, var(--accent-mid) 100%);
+        }
+
+        .ticket-head-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .ticket-step {
+            position: static;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1;
+            color: #fff;
+            letter-spacing: 0.04em;
+            opacity: 0.9;
+            -webkit-text-stroke: 0;
+        }
+
+        .ticket-icon {
+            width: 2.55rem;
+            height: 2.55rem;
+            border-radius: 0.45rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            font-size: 1.02rem;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .ticket-card:hover .ticket-icon {
+            background: var(--accent-line);
+            color: var(--accent-deep);
+            border-color: transparent;
+        }
+
+        .ticket-chip {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.88);
+            white-space: nowrap;
+        }
+
+        .ticket-title-head {
+            margin: 0;
+            max-width: none;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 2vw, 1.75rem);
+            font-weight: 600;
+            line-height: 1.15;
+            color: #fff;
+            text-shadow: none;
+        }
+
+        .ticket-title-head::after {
+            content: "";
+            display: block;
+            width: 2.35rem;
+            height: 2px;
+            margin-top: 0.75rem;
+            background: var(--accent-line);
+            opacity: 0.95;
+        }
+
+        .ticket-body {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 1.15rem 1.35rem 1.35rem;
+            margin: 0;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 11px,
+                    var(--stripe) 11px,
+                    var(--stripe) 12px
+                ),
+                #fff;
+        }
+
+        .ticket-desc {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: #5b675f;
+            margin: 0 0 1.25rem;
+            flex: 1;
+        }
+
+        .ticket-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            width: fit-content;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.01em;
+        }
+
+        .ticket-card:hover .ticket-link i {
+            transform: translateX(4px);
+        }
+
+        .ticket-link i {
+            transition: transform 0.3s ease;
+            font-size: 0.72rem;
+        }
+
+        .pathway-panel {
+            background: #fff;
+            border-radius: 1.4rem;
+            border: 1px solid rgba(46, 139, 87, 0.12);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
+                0 22px 56px rgba(15, 45, 30, 0.11);
+            padding: 0;
+            margin: -2.75rem auto 1.85rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .pathway-top {
+            display: grid;
+            gap: 1.25rem;
+            padding: 1.55rem 1.4rem 1.45rem;
+            position: relative;
+            z-index: 1;
+            background:
+                linear-gradient(120deg, #0f3f2f 0%, #166534 42%, #1f7a4d 100%);
+            color: #fff;
+        }
+
+        @media (min-width: 820px) {
+            .pathway-top {
+                grid-template-columns: 1.35fr 1fr;
+                align-items: end;
+                gap: 2rem;
+                padding: 1.85rem 1.85rem 1.65rem;
+            }
+        }
+
+        .pathway-intro {
             display: flex;
             align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.8125rem;
-            color: #4b5563;
-            line-height: 1.45;
+            gap: 1.05rem;
         }
-        .program-meta i {
-            color: #2E8B57;
-            margin-top: 0.15rem;
-            width: 1rem;
-            text-align: center;
+
+        .pathway-badge {
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 0.95rem;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
             flex-shrink: 0;
+        }
+
+        .pathway-kicker {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(187, 247, 208, 0.95);
+            margin: 0 0 0.4rem;
+        }
+
+        .pathway-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.12;
+            margin: 0 0 0.45rem;
+        }
+
+        .pathway-title::after {
+            content: "";
+            display: block;
+            width: 2.4rem;
+            height: 2px;
+            margin-top: 0.7rem;
+            background: #86efac;
+            opacity: 0.9;
+        }
+
+        .pathway-sub {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(236, 253, 245, 0.88);
+            max-width: 34rem;
+            margin: 0;
+        }
+
+        .pathway-aside {
+            display: grid;
+            gap: 0.65rem;
+            padding: 1rem 1.05rem;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .pathway-aside-label {
+            margin: 0;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(187, 247, 208, 0.95);
+        }
+
+        .pathway-aside-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .pathway-aside-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.65rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.35;
+        }
+
+        .pathway-aside-list strong {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #bbf7d0;
+            min-width: 1.4rem;
+        }
+
+        .pathway-note {
+            margin: 0;
+            padding: 0.95rem 1.35rem 1.15rem;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #4b5c53;
+            background: linear-gradient(180deg, #f4faf6 0%, #fff 100%);
+            border-top: 1px solid rgba(46, 139, 87, 0.1);
+        }
+
+        .pathway-note i {
+            color: #2E8B57;
+            margin-right: 0.4rem;
+        }
+
+        @media (min-width: 768px) {
+            .pathway-panel {
+                margin-top: -3.25rem;
+            }
+            .pathway-note {
+                padding: 1rem 1.75rem 1.25rem;
+            }
         }
     </style>
 
@@ -70,72 +424,133 @@
     <script src="../header.js"></script>
 
     <section class="relative bg-gradient-to-br from-hospital-green via-emerald-700 to-teal-800 text-white py-16 md:py-24 overflow-hidden">
-        <div class="absolute inset-0 opacity-10" aria-hidden="true">
-            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white"></div>
-            <div class="absolute -bottom-32 -left-16 w-80 h-80 rounded-full bg-hospital-orange"></div>
-        </div>
+        <div class="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-3xl">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-sm font-medium mb-6">
                     <i class="fas fa-calendar-days"></i> Events &amp; Programs
                 </span>
-                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">Events &amp; Conference Programs</h1>
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">Events &amp; Programs</h1>
                 <p class="text-lg md:text-xl text-green-50 leading-relaxed">
-                    Discover upcoming conferences, consortium meetings, and academic programs hosted by Sri Shankara Cancer Hospital &amp; Research Centre in collaboration with national and international partners.
+                    Choose an event category to explore CME sessions, conferences, Tumor Board meetings, and Svaropachara music therapy programs hosted by Sri Shankara Cancer Hospital &amp; Research Centre.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-16 md:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Programs</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Browse active and upcoming initiatives. More programs will be added as they are announced.
+    <section class="events-stage py-12 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="pathway-panel">
+                <div class="pathway-top">
+                    <div class="pathway-intro">
+                        <div class="pathway-badge" aria-hidden="true">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <div>
+                            <p class="pathway-kicker">Your pathway</p>
+                            <h2 class="pathway-title">Choose a category</h2>
+                            <p class="pathway-sub">
+                                Four distinct program streams — pick one below to open schedules, flyers, and session details.
+                            </p>
+                        </div>
+                    </div>
+                    <aside class="pathway-aside" aria-label="Program overview">
+                        <p class="pathway-aside-label">At a glance</p>
+                        <ul class="pathway-aside-list">
+                            <li><strong>01</strong> CME — Continuing Medical Education</li>
+                            <li><strong>02</strong> Conference — National and International</li>
+                            <li><strong>03</strong> Tumor Board — Multidisciplinary Care</li>
+                            <li><strong>04</strong> Svaropachara — Music Therapy</li>
+                        </ul>
+                    </aside>
+                </div>
+                <p class="pathway-note">
+                    <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                    Scroll the program cards below to open CME, Conference, Tumor Board, or Svaropachara.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-                <a href="GCC-2027.pdf" class="program-card block bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-md" aria-label="View 8th International Conference of the Global Cancer Consortium details">
-                    <div class="h-44 bg-gradient-to-br from-hospital-green to-teal-600 flex flex-col items-center justify-center relative px-6 text-center">
-                        <i class="fas fa-globe-americas text-4xl text-white/90 mb-2"></i>
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur-sm">Conference Program</span>
-                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm">29–30 Jan 2027</span>
-                        <p class="text-white/95 text-xs font-medium leading-snug max-w-[16rem]">8th International Conference</p>
+            <div class="ticket-grid">
+                <a href="cme.html" class="ticket-card cme" aria-label="View CME programs">
+                    <div class="ticket-head">
+                        <div class="ticket-head-top">
+                            <div class="ticket-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                            <span class="ticket-step" aria-hidden="true">01</span>
+                        </div>
+                        <p class="ticket-chip">Education</p>
+                        <h3 class="ticket-title-head">CME</h3>
                     </div>
-                    <div class="p-6">
-                        <p class="text-xs font-semibold text-hospital-green uppercase tracking-wide mb-1">Global Cancer Consortium</p>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">8th International Conference of the Global Cancer Consortium</h3>
-                        <p class="text-gray-500 text-xs leading-relaxed mb-3">
-                            Jointly organized by Sri Shankara Cancer Hospital &amp; Research Centre and GCC South Asia Chapter.
+                    <div class="ticket-body">
+                        <p class="ticket-desc">
+                            Continuing Medical Education sessions for clinicians and healthcare professionals.
                         </p>
-                        <div class="program-theme rounded-lg px-3 py-2.5 mb-4">
-                            <p class="text-xs font-semibold text-hospital-orange mb-0.5">Theme</p>
-                            <p class="text-gray-800 text-sm font-medium leading-snug">Molecular Approaches to Clinical Oncology</p>
-                            <p class="text-gray-600 text-xs mt-1 leading-relaxed">Multidisciplinary approaches, Innovative Science and Technologies</p>
+                        <span class="ticket-link">
+                            View CME programs
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="../SSCHRC_Events_GCC/index.html" class="ticket-card conference" aria-label="View conferences">
+                    <div class="ticket-head">
+                        <div class="ticket-head-top">
+                            <div class="ticket-icon"><i class="fas fa-earth-americas" aria-hidden="true"></i></div>
+                            <span class="ticket-step" aria-hidden="true">02</span>
                         </div>
-                        <div class="space-y-2 mb-4">
-                            <p class="program-meta">
-                                <i class="fas fa-calendar-days"></i>
-                                <span>Dates: 29 and 30 January 2027</span>
-                            </p>
-                            <p class="program-meta">
-                                <i class="fas fa-location-dot"></i>
-                                <span>Venue: Sri Shankara Cancer Hospital and Research Centre, Bengaluru, Karnataka, India.</span>
-                            </p>
+                        <p class="ticket-chip">National &amp; International</p>
+                        <h3 class="ticket-title-head">Conference</h3>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="ticket-desc">
+                            National and international conferences, including the Global Cancer Consortium meeting.
+                        </p>
+                        <span class="ticket-link">
+                            View conferences
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="tumor-board.html" class="ticket-card tumor" aria-label="View Tumor Board meetings">
+                    <div class="ticket-head">
+                        <div class="ticket-head-top">
+                            <div class="ticket-icon"><i class="fas fa-people-group" aria-hidden="true"></i></div>
+                            <span class="ticket-step" aria-hidden="true">03</span>
                         </div>
-                        <span class="inline-flex items-center gap-2 text-hospital-green font-semibold text-sm">
-                            View conference details
-                            <i class="fas fa-arrow-right text-xs"></i>
+                        <p class="ticket-chip">Multidisciplinary</p>
+                        <h3 class="ticket-title-head">Tumor Board</h3>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="ticket-desc">
+                            Multidisciplinary case discussions that guide coordinated, evidence-based cancer care.
+                        </p>
+                        <span class="ticket-link">
+                            View Tumor Board
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="svaropachara.html" class="ticket-card svaropachara" aria-label="View Svaropachara music therapy">
+                    <div class="ticket-head">
+                        <div class="ticket-head-top">
+                            <div class="ticket-icon"><i class="fas fa-music" aria-hidden="true"></i></div>
+                            <span class="ticket-step" aria-hidden="true">04</span>
+                        </div>
+                        <p class="ticket-chip">Music Therapy</p>
+                        <h3 class="ticket-title-head">Svaropachara</h3>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="ticket-desc">
+                            Healing through music — therapeutic sessions that support emotional wellbeing and recovery for patients and caregivers.
+                        </p>
+                        <span class="ticket-link">
+                            View Svaropachara
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </span>
                     </div>
                 </a>
             </div>
-
-            <p class="text-center text-gray-500 text-sm mt-12">
-                Additional events and programs will be listed here as they are scheduled.
-            </p>
         </div>
     </section>
 

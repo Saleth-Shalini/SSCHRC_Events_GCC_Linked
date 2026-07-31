@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Upload Svaropachara Flyer | SSCHRC Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --ink: #0B1F33;
+      --slate: #3D5568;
+      --blue: #1A5F9E;
+      --line: #D9E4EF;
+      --mist: #F4F7FA;
+      --ok: #1F7A4C;
+      --bad: #B42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #F7F9FC, #EEF3F8);
+      min-height: 100vh;
+      padding: 2rem 1rem 3rem;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      box-shadow: 0 18px 40px rgba(11,31,51,0.08);
+    }
+    h1 { margin: 0 0 0.35rem; font-size: 1.6rem; }
+    .lead { margin: 0 0 1.25rem; color: var(--slate); line-height: 1.5; }
+    .note {
+      background: var(--mist);
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      color: var(--slate);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+    label { display: block; font-size: 0.85rem; font-weight: 700; margin: 0 0 0.35rem; }
+    .field { margin-bottom: 1rem; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 0.7rem;
+      padding: 0.7rem 0.85rem;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+    }
+    textarea { min-height: 72px; resize: vertical; }
+    .row { display: grid; gap: 0.9rem; }
+    @media (min-width: 640px) {
+      .row-2 { grid-template-columns: 1fr 1fr; }
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.75rem 1.2rem;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--ink); color: #fff; }
+    .btn-ghost { background: #fff; color: var(--blue); border: 1.5px solid var(--line); }
+    .msg {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+    }
+    .msg.ok { display: block; background: #E8F7EF; color: var(--ok); }
+    .msg.bad { display: block; background: #FDECEC; color: var(--bad); }
+    .hint { font-size: 0.8rem; color: var(--slate); margin-top: 0.3rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Upload Svaropachara Flyer</h1>
+      <p class="lead">Add a flyer to <strong>Upcoming Events</strong> or <strong>Completed Events</strong>. It will appear automatically on the Svaropachara page.</p>
+
+      <div class="note">
+        <strong>How to use:</strong> Fill the form, choose the flyer image/PDF, enter the upload password, then submit.
+        Default password: <code>sschrc-svaropachara-2026</code> (change it in <code>svaropachara-upload.php</code> before going live).
+        <br><br>
+        This page needs a <strong>PHP server</strong> (XAMPP / live hosting). On plain <code>python -m http.server</code>, upload will not work — use manual method below.
+      </div>
+
+      <form id="upload-form" enctype="multipart/form-data">
+        <div class="field">
+          <label for="title">Event title</label>
+          <input id="title" name="title" required placeholder="Svaropachara — Music therapy session">
+        </div>
+
+        <div class="row row-2">
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="time">Time</label>
+            <input id="time" name="time" placeholder="08:00pm Onwards">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="venue">Venue</label>
+          <textarea id="venue" name="venue" placeholder="Venue address"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="association">In association with (optional)</label>
+          <input id="association" name="association" placeholder="Indian Academy of Paediatrics, Chitradurga (IAP)">
+        </div>
+
+        <div class="row row-2">
+          <div class="field">
+            <label for="status">List under</label>
+            <select id="status" name="status">
+              <option value="upcoming" selected>Upcoming Events</option>
+              <option value="completed">Completed Events</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="flyer">Flyer file</label>
+            <input id="flyer" name="flyer" type="file" accept=".jpg,.jpeg,.png,.webp,.pdf,image/*,application/pdf" required>
+            <p class="hint">JPG, PNG, WEBP or PDF · max 12MB</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="password">Upload password</label>
+          <input id="password" name="password" type="password" required autocomplete="current-password">
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit"><i class="fas fa-cloud-upload-alt"></i> Upload flyer</button>
+          <a class="btn btn-ghost" href="svaropachara.html"><i class="fas fa-arrow-left"></i> Back to Svaropachara page</a>
+        </div>
+        <div id="msg" class="msg" role="status"></div>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <h2 style="margin:0 0 0.5rem;font-size:1.15rem;">Manual upload (no PHP)</h2>
+      <ol style="margin:0;padding-left:1.2rem;color:var(--slate);line-height:1.6;">
+        <li>Copy your flyer into <code>assets/svaropachara/flyers/upcoming/</code> or <code>.../completed/</code></li>
+        <li>Open <code>svaropachara-events.json</code> and add a new entry under <code>upcoming</code> or <code>completed</code></li>
+        <li>Refresh <code>svaropachara.html</code></li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('upload-form');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      msg.className = 'msg';
+      msg.textContent = 'Uploading…';
+      msg.style.display = 'block';
+
+      try {
+        const res = await fetch('svaropachara-upload.php', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const data = await res.json().catch(function () { return null; });
+        if (!res.ok || !data || !data.ok) {
+          throw new Error((data && data.message) || 'Upload failed. Make sure PHP is running.');
+        }
+        msg.className = 'msg ok';
+        msg.textContent = data.message;
+        setTimeout(function () {
+          window.location.href = data.redirect || 'svaropachara.html#upcoming';
+        }, 900);
+      } catch (err) {
+        msg.className = 'msg bad';
+        msg.textContent = err.message || 'Upload failed.';
+      }
+    });
+  </script>
+</body>
+</html>

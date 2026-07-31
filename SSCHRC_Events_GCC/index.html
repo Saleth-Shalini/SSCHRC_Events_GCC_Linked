@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="8th International Conference of the Global Cancer Consortium, 29–30 January 2027 at Sri Shankara Cancer Hospital & Research Centre, Bengaluru.">
+    <link rel="canonical" href="https://srishankaracancerhospital.org/events-and-programs" />
+    <title>Events & Conference Programs | Sri Shankara Cancer Hospital</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hospital-green': '#003380',
+                        'hospital-orange': '#FF6600',
+                        'gcc-blue': '#005F8A'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../chatbox.css">
+    <link rel="stylesheet" href="gcc-2027-theme.css">
+    <link rel="stylesheet" href="gcc-buttons.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 1rem;
+            z-index: 100;
+            padding: 0.65rem 1rem;
+            background: #fff;
+            color: #003380;
+            font-weight: 600;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 1rem;
+            outline: 2px solid #003380;
+            outline-offset: 2px;
+        }
+
+        .page-hero {
+            background: var(--gcc-brand-gradient);
+        }
+
+        /* Logo bar — unified partner strip */
+        .hero-brand {
+            display: grid;
+            gap: clamp(1.75rem, 4vw, 2.5rem);
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-brand {
+                grid-template-columns: minmax(0, 20rem) 1fr;
+                gap: clamp(2rem, 5vw, 3.5rem);
+            }
+        }
+
+        .hero-brand__logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-brand__logo {
+                justify-content: flex-start;
+            }
+        }
+
+        /* Brandmark — partner logo lockup */
+        .brandmark {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: clamp(1.25rem, 4vw, 2.75rem);
+            flex-wrap: wrap;
+        }
+
+        .brandmark__unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
+            margin: 0;
+            max-width: 13rem;
+        }
+
+        .brandmark__frame {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        box-shadow 0.35s ease;
+        }
+
+        .brandmark__frame img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        /* Circular medallion — for the round emblems */
+        .brandmark__frame--circle {
+            width: clamp(5.5rem, 13vw, 7rem);
+            height: clamp(5.5rem, 13vw, 7rem);
+            padding: 0.55rem;
+            border-radius: 50%;
+            box-shadow:
+                0 12px 30px -8px rgba(0, 0, 0, 0.3),
+                0 0 0 6px rgba(255, 255, 255, 0.55),
+                0 0 0 7px rgba(0, 51, 128, 0.3);
+        }
+
+        .brandmark__frame--circle img {
+            border-radius: 50%;
+        }
+
+        /* Wide pill card — for the horizontal hospital lockup */
+        .brandmark__frame--wide {
+            width: auto;
+            min-width: 12rem;
+            max-width: 22rem;
+            height: clamp(5.5rem, 13vw, 7rem);
+            padding: 0.75rem 1.35rem;
+            border-radius: 1.15rem;
+            box-shadow:
+                0 12px 30px -8px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.7);
+        }
+
+        .brandmark__unit:hover .brandmark__frame--circle {
+            transform: translateY(-6px);
+            box-shadow:
+                0 20px 42px -10px rgba(0, 0, 0, 0.38),
+                0 0 0 6px rgba(255, 255, 255, 0.7),
+                0 0 0 7px rgba(0, 51, 128, 0.55);
+        }
+
+        .brandmark__unit:hover .brandmark__frame--wide {
+            transform: translateY(-6px);
+            box-shadow:
+                0 20px 42px -10px rgba(0, 0, 0, 0.38),
+                0 0 0 1px rgba(255, 255, 255, 0.85);
+        }
+
+        .brandmark__name {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.4;
+            text-align: center;
+            max-width: 11rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+        }
+
+        .brandmark--solo .brandmark__unit {
+            max-width: 24rem;
+        }
+
+        .brandmark--solo .brandmark__name {
+            max-width: 20rem;
+        }
+
+        /* Three-partner lockup — larger logos & captions to fill left panel */
+        .program-card__aside .brandmark--triple {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            align-items: start;
+            gap: 1.15rem 1.1rem;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0 0.15rem;
+            box-sizing: border-box;
+            flex: 1 1 auto;
+            align-content: center;
+        }
+
+        .program-card__aside .brandmark--triple .brandmark__unit {
+            max-width: 11rem;
+            width: 100%;
+            flex: none;
+            gap: 0.65rem;
+        }
+
+        .program-card__aside .brandmark--triple .brandmark__unit--host {
+            grid-column: 1 / -1;
+            max-width: 20rem;
+            width: 100%;
+            justify-self: center;
+        }
+
+        .program-card__aside .brandmark--triple .brandmark__frame--circle {
+            width: clamp(6.75rem, 16vw, 8.25rem);
+            height: clamp(6.75rem, 16vw, 8.25rem);
+            padding: 0.5rem;
+            box-shadow:
+                0 12px 28px -8px rgba(0, 0, 0, 0.32),
+                0 0 0 5px rgba(255, 255, 255, 0.55),
+                0 0 0 6px rgba(0, 51, 128, 0.32);
+        }
+
+        .program-card__aside .brandmark--triple .brandmark__frame--wide {
+            width: 100%;
+            min-width: 0;
+            max-width: 20rem;
+            height: clamp(5.75rem, 14vw, 7rem);
+            padding: 0.65rem 1rem;
+            border-radius: 0.95rem;
+            background: #ffffff;
+        }
+
+        .program-card__aside .brandmark--triple .brandmark__name {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            max-width: 100%;
+            letter-spacing: 0.05em;
+            line-height: 1.35;
+            color: #ffffff;
+        }
+
+        .program-card__aside .brandmark--triple .brandmark__unit--host .brandmark__name {
+            font-size: 0.875rem;
+            max-width: 20rem;
+        }
+
+        .program-card__aside .brandmark {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 479px) {
+            .brandmark {
+                gap: 1.5rem;
+            }
+            .program-card__aside .brandmark--triple .brandmark__unit--host {
+                order: 0;
+            }
+            .program-card__aside .brandmark--triple .brandmark__frame--circle {
+                width: clamp(5.5rem, 28vw, 6.5rem);
+                height: clamp(5.5rem, 28vw, 6.5rem);
+            }
+        }
+
+        .program-card__aside {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            padding: 3.75rem 1.35rem 1.5rem;
+            min-height: 300px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .program-card__aside::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 14rem;
+            height: 14rem;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .program-card__aside::after {
+            content: '';
+            position: absolute;
+            bottom: -25%;
+            left: -15%;
+            width: 12rem;
+            height: 12rem;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        @media (min-width: 1024px) {
+            .program-card__aside {
+                min-height: 100%;
+                height: auto;
+                padding: 3.35rem 1.35rem 1.35rem;
+                gap: 0.85rem;
+            }
+        }
+
+        .program-card__aside-label {
+            position: relative;
+            z-index: 1;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.92);
+            margin: 1.35rem 0 0;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .program-card__aside-body {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.75rem;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+            margin-inline: 0;
+            margin-top: auto;
+            padding-inline: 0.15rem;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        .program-card__aside-body > p,
+        .program-card__aside-title {
+            margin: 0;
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #ffffff;
+        }
+
+        .program-card__cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            width: 100%;
+            padding: 0.95rem 1.25rem;
+            border-radius: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            color: #002659;
+            background: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow:
+                0 10px 28px rgba(0, 0, 0, 0.18),
+                0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .program-card__cta i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.55rem;
+            height: 1.55rem;
+            border-radius: 50%;
+            background: #e8f6f6;
+            color: #003380;
+            font-size: 0.7rem;
+            transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .program-card__cta:hover {
+            color: #001f4d;
+            background: #eef2f8;
+            transform: translateY(-2px);
+            box-shadow:
+                0 14px 32px rgba(0, 0, 0, 0.22),
+                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+        }
+
+        .program-card__cta:hover i {
+            transform: translateX(3px);
+            background: #003380;
+            color: #fff;
+        }
+
+        .program-card__cta:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 3px;
+        }
+
+        @media (min-width: 1024px) {
+            .program-card__aside-body {
+                max-width: none;
+            }
+
+            .program-card__cta {
+                padding: 1rem 1.35rem;
+                font-size: 1rem;
+            }
+        }
+
+        .program-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+        .program-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 51, 128, 0.15);
+        }
+        .program-theme {
+            border-left: 4px solid #FF6600;
+            background: linear-gradient(135deg, #FFF5EE 0%, #fff8f3 55%, #f0f7fb 100%);
+            border-radius: 0.85rem;
+            box-shadow: 0 4px 14px rgba(255, 102, 0, 0.08);
+        }
+
+        .program-card__body {
+            display: flex;
+            flex-direction: column;
+            gap: 0.95rem;
+            height: 100%;
+        }
+
+        .program-card__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            width: fit-content;
+            margin: 0;
+            padding: 0.28rem 0.65rem;
+            border-radius: 9999px;
+            background: rgba(0, 51, 128, 0.07);
+            color: #003380;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .program-card__eyebrow i {
+            color: #FF6600;
+            font-size: 0.7rem;
+        }
+
+        .program-card__title {
+            margin: 0;
+            font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #0f172a;
+        }
+
+        .program-card__title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .program-card__title a:hover {
+            color: #003380;
+        }
+
+        .program-card__lead {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.9375rem;
+            line-height: 1.55;
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+        }
+
+        .program-theme__label {
+            margin: 0 0 0.2rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #FF6600;
+        }
+
+        .program-theme__title {
+            margin: 0;
+            font-size: 0.975rem;
+            font-weight: 700;
+            color: #003380;
+            line-height: 1.35;
+        }
+
+        .program-theme__sub {
+            margin: 0.35rem 0 0;
+            font-size: 0.84rem;
+            color: #64748b;
+            line-height: 1.45;
+        }
+
+        .program-facts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.65rem;
+        }
+
+        @media (min-width: 640px) {
+            .program-facts {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .program-fact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 0.85rem;
+            background: #fff;
+            border: 1.5px solid rgba(0, 51, 128, 0.14);
+            border-radius: 0.85rem;
+            box-shadow: 0 4px 14px rgba(0, 51, 128, 0.06);
+            transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            text-align: center;
+        }
+
+        .program-fact:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 51, 128, 0.1);
+            border-color: rgba(0, 51, 128, 0.28);
+        }
+
+        .program-fact--dates {
+            background: linear-gradient(145deg, rgba(0, 51, 128, 0.05) 0%, rgba(0, 155, 149, 0.1) 100%);
+            border-color: rgba(0, 95, 138, 0.22);
+        }
+
+        .program-fact--venue {
+            background: linear-gradient(145deg, rgba(255, 102, 0, 0.06) 0%, rgba(255, 152, 70, 0.1) 100%);
+            border-color: rgba(255, 102, 0, 0.28);
+        }
+
+        .program-fact__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.35rem;
+            height: 2.35rem;
+            border-radius: 0.65rem;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        .program-fact--dates .program-fact__icon {
+            background: linear-gradient(135deg, #003380 0%, #009B95 100%);
+            box-shadow: 0 6px 14px rgba(0, 51, 128, 0.28);
+        }
+
+        .program-fact--venue .program-fact__icon {
+            background: linear-gradient(135deg, #FF6600 0%, #E55A00 100%);
+            box-shadow: 0 6px 14px rgba(255, 102, 0, 0.28);
+        }
+
+        .program-fact__body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+            min-width: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .program-fact__label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .program-fact--dates .program-fact__label {
+            color: #005F8A;
+        }
+
+        .program-fact--venue .program-fact__label {
+            color: #c2410c;
+        }
+
+        .program-fact__value {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.35;
+            text-align: center;
+        }
+
+        .program-chips {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.4rem;
+            width: 100%;
+            overflow-x: auto;
+            padding-bottom: 0.1rem;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .program-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex: 0 0 auto;
+            padding: 0.4rem 0.7rem;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, rgba(0, 51, 128, 0.06), rgba(0, 155, 149, 0.08));
+            border: 1px solid rgba(0, 51, 128, 0.12);
+            color: #003380;
+            font-size: 0.72rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .program-chip i {
+            color: #FF6600;
+            font-size: 0.68rem;
+        }
+
+        .program-meta {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9375rem;
+            color: #4b5563;
+            line-height: 1.45;
+        }
+        .program-meta i {
+            color: #003380;
+            margin-top: 0.15rem;
+            width: 1rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .btn-tooltip-wrap {
+            position: relative;
+            display: inline-flex;
+        }
+        .btn-tooltip {
+            position: absolute;
+            bottom: calc(100% + 0.5rem);
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.45rem 0.75rem;
+            background: #1f2937;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 500;
+            line-height: 1.35;
+            border-radius: 0.375rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            z-index: 30;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .btn-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #1f2937;
+        }
+        .btn-tooltip-wrap:hover .btn-tooltip,
+        .btn-tooltip-wrap:focus-within .btn-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        .section-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Conference action buttons — centered, even grid */
+        .gcc-actions-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0.55rem;
+            width: 100%;
+            margin-inline: auto;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(0, 51, 128, 0.08);
+        }
+
+        .gcc-actions-wrap .gcc-btn {
+            flex: 0 1 auto;
+            min-width: 11.5rem;
+            justify-content: center;
+            text-align: center;
+            white-space: normal;
+            line-height: 1.25;
+            padding: 0.7rem 0.85rem;
+            font-size: 0.8125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        @media (min-width: 640px) {
+            .gcc-actions-wrap {
+                gap: 0.75rem;
+                max-width: 100%;
+            }
+
+            .gcc-actions-wrap .gcc-btn {
+                flex: 1 1 calc(50% - 0.75rem);
+                width: auto;
+                max-width: calc(50% - 0.4rem);
+                min-height: 2.85rem;
+                min-width: 0;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .gcc-actions-wrap .gcc-btn {
+                flex: 1 1 calc(33.333% - 0.75rem);
+                max-width: calc(33.333% - 0.5rem);
+                white-space: nowrap;
+                font-size: 0.8rem;
+                padding: 0.7rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .gcc-actions-wrap .gcc-btn {
+                flex: 1 1 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .btn-tooltip-wrap {
+                width: 100%;
+            }
+            .btn-tooltip {
+                white-space: normal;
+                text-align: center;
+                max-width: 16rem;
+            }
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EM0LW3CT3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9EM0LW3CT3');
+    </script>
+</head>
+<body class="bg-[#f0f5f8]">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header id="dynamic-header"></header>
+    <script src="../header.js"></script>
+
+    <section class="page-hero relative text-white py-14 md:py-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-10" aria-hidden="true">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white"></div>
+            <div class="absolute -bottom-32 -left-16 w-80 h-80 rounded-full bg-hospital-orange"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="hero-brand">
+                <div class="hero-brand__logo">
+                    <div class="brandmark brandmark--solo" aria-label="Host institution">
+                        <figure class="brandmark__unit brandmark__unit--host">
+                            <div class="brandmark__frame brandmark__frame--wide">
+                                <img class="gcc-logo-hospital" src="assets/gcc-banner.png" alt="Sri Shankara Cancer Hospital and Research Centre logo" width="473" height="227" loading="eager" decoding="async">
+                            </div>
+                            <figcaption class="brandmark__name">Sri Shankara Cancer Hospital &amp; Research Centre</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="max-w-3xl mx-auto text-center md:text-left md:mx-0">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-sm font-medium mb-6">
+                        <i class="fas fa-calendar-days" aria-hidden="true"></i> Events &amp; Programs
+                    </span>
+                    <h1 class="section-heading text-3xl md:text-5xl font-bold leading-tight mb-4">Events &amp; Conference Programs</h1>
+                    <p class="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">
+                        Discover upcoming conferences, consortium meetings, and academic programs hosted by Sri Shankara Cancer Hospital &amp; Research Centre in collaboration with national and international partners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main-content" class="py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-12 md:mb-14">
+                <h2 class="section-heading text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Programs</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Browse active and upcoming initiatives. More programs will be added as they are announced.
+                </p>
+            </div>
+
+            <div class="w-full max-w-6xl mx-auto">
+                <article class="program-card bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-md">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="program-card__aside lg:w-[42%] gcc-brand-gradient">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur-sm">Conference Program</span>
+                            <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-hospital-orange text-white shadow-sm">29–30 Jan 2027</span>
+
+                            <p class="program-card__aside-label">Organizing Partners</p>
+                            <div class="brandmark brandmark--triple" aria-label="Conference organizing partners">
+                                <figure class="brandmark__unit">
+                                    <div class="brandmark__frame brandmark__frame--circle">
+                                        <img class="gcc-logo-gcc" src="assets/global-cancer-consortium.png" alt="Global Cancer Consortium logo, established 2020" width="162" height="162" loading="lazy" decoding="async">
+                                    </div>
+                                    <figcaption class="brandmark__name">Global Cancer Consortium</figcaption>
+                                </figure>
+                                <figure class="brandmark__unit">
+                                    <div class="brandmark__frame brandmark__frame--circle">
+                                        <img class="gcc-logo-southasia" src="assets/GCC-Est.2023.png" alt="Global Cancer Consortium South Asia Chapter logo, established 2023" width="163" height="162" loading="lazy" decoding="async">
+                                    </div>
+                                    <figcaption class="brandmark__name">South Asia Chapter</figcaption>
+                                </figure>
+                                <figure class="brandmark__unit brandmark__unit--host">
+                                    <div class="brandmark__frame brandmark__frame--wide">
+                                        <img class="gcc-logo-hospital" src="assets/gcc-banner.png" alt="Sri Shankara Cancer Hospital and Research Centre logo" width="473" height="227" loading="lazy" decoding="async">
+                                    </div>
+                                    <figcaption class="brandmark__name">Sri Shankara Cancer Hospital &amp; Research Centre</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="program-card__aside-body">
+                                <p class="program-card__aside-title">8th International Conference</p>
+                                <a href="gcc-2027.html" class="program-card__cta">
+                                    View Conference Details
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-[58%] p-5 sm:p-6 lg:p-6 flex flex-col">
+                            <div class="program-card__body">
+                                <p class="program-card__eyebrow">
+                                    <i class="fas fa-globe" aria-hidden="true"></i>
+                                    Global Cancer Consortium
+                                </p>
+                                <h3 class="program-card__title">
+                                    <a href="gcc-2027.html" class="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hospital-green rounded">
+                                        8th International Conference of the Global Cancer Consortium
+                                    </a>
+                                </h3>
+                                <p class="program-card__lead">
+                                    Jointly organized by Sri Shankara Cancer Hospital &amp; Research Centre and GCC South Asia Chapter.
+                                </p>
+
+                                <div class="program-theme px-4 py-3.5">
+                                    <p class="program-theme__label">Theme</p>
+                                    <p class="program-theme__title">Molecular Approaches to Clinical Oncology</p>
+                                    <p class="program-theme__sub">Multidisciplinary approaches, Innovative Science and Technologies</p>
+                                </div>
+
+                                <div class="program-chips" aria-label="Conference highlights">
+                                    <span class="program-chip"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Bengaluru, India</span>
+                                    <span class="program-chip"><i class="fas fa-users" aria-hidden="true"></i> In-person &amp; Virtual</span>
+                                    <span class="program-chip"><i class="fas fa-microscope" aria-hidden="true"></i> Oncology &amp; Molecular Science</span>
+                                </div>
+
+                                <div class="program-facts">
+                                    <div class="program-fact program-fact--dates">
+                                        <span class="program-fact__icon" aria-hidden="true"><i class="fas fa-calendar-days"></i></span>
+                                        <div class="program-fact__body">
+                                            <span class="program-fact__label">Dates</span>
+                                            <span class="program-fact__value">29–30 January 2027</span>
+                                        </div>
+                                    </div>
+                                    <div class="program-fact program-fact--venue">
+                                        <span class="program-fact__icon" aria-hidden="true"><i class="fas fa-location-dot"></i></span>
+                                        <div class="program-fact__body">
+                                            <span class="program-fact__label">Venue</span>
+                                            <span class="program-fact__value">Sri Shankara Cancer Hospital &amp; Research Centre, Bengaluru</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gcc-actions-wrap" role="navigation" aria-label="Conference actions">
+                                    <a href="gcc-2027.html#contact" class="gcc-btn gcc-btn--secondary">
+                                        <i class="fas fa-envelope" aria-hidden="true"></i> Contact Us
+                                    </a>
+                                    <a href="gcc-2027.html#registration-details" class="gcc-btn gcc-btn--secondary">
+                                        <i class="fas fa-clipboard-list" aria-hidden="true"></i> Registration Details
+                                    </a>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSRQxWpFZihOVgW6oKKxR0QFQwGne_O57jDkQwTKVSD96XJw/viewform" data-gcc-link="register-form" class="gcc-btn gcc-btn--secondary" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-user-plus" aria-hidden="true"></i> Register Now
+                                    </a>
+                                    <a href="gcc-2027.html#abstract-guidelines" class="gcc-btn gcc-btn--secondary">
+                                        <i class="fas fa-file-lines" aria-hidden="true"></i> Abstract Guidelines
+                                    </a>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqqdCDhriDRzIkKs-Fie0fhp_1GKW-CyMH83hXmZyYPkTD8w/viewform" data-gcc-link="abstract-form" class="gcc-btn gcc-btn--secondary" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Abstract
+                                    </a>
+                                    <a href="gcc-2027.html#scientific-program" class="gcc-btn gcc-btn--secondary">
+                                        <i class="fas fa-microscope" aria-hidden="true"></i> Scientific Program
+                                    </a>
+                                    <a href="gcc-2027.html#contact" class="gcc-btn gcc-btn--secondary">
+                                        <i class="fas fa-circle-question" aria-hidden="true"></i> Any Queries
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <p class="text-center text-gray-500 text-sm mt-12 leading-relaxed">
+                Additional events and programs will be listed here as they are scheduled.
+            </p>
+        </div>
+    </main>
+
+    <footer id="hospital-footer"></footer>
+
+    <button id="chat-fab3" class="pulse3" aria-label="Open chat support">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2M6,9V7H18V9H6M14,11V13H6V11H14M16,15H6V17H16V15Z"/>
+        </svg>
+    </button>
+
+    <div id="chatbox-container3">
+        <div id="chatbox-header3">
+            <div class="header-content3">
+                <div class="avatar3">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                    </svg>
+                </div>
+            </div>
+            <button id="chatbox-close3" aria-label="Close chatbox">&times;</button>
+        </div>
+        <div id="chatbox-body3">
+            <div id="chatbox-messages3" style="display:none;"></div>
+            <div id="chatbox-faq-buttons3" style="display:none;"></div>
+        </div>
+        <form id="chatbox-form3" style="display:none;">
+            <div id="chatbox-input-area3">
+                <input type="text" id="chatbox-input3" placeholder="Type your message here..." autocomplete="off" required />
+                <button type="submit" id="chatbox-send-btn3">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../footer.js"></script>
+    <script src="../chatbox.js"></script>
+    <script src="gcc-forms-config.js"></script>
+</body>
+</html>
